@@ -1,42 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ZikoCult <ZikoCult>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 21:06:43 by ZikoCult          #+#    #+#             */
-/*   Updated: 2023/10/10 21:11:50 by ZikoCult         ###   ########.fr       */
+/*   Created: 2023/10/10 21:40:51 by ZikoCult          #+#    #+#             */
+/*   Updated: 2023/10/10 22:01:30 by ZikoCult         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned char	*destiny;
-	size_t			i;
+	int		len;
+	size_t	i;
 
-	destiny = (unsigned char *) dest;
 	i = 0;
-	if (dest == NULL || src == NULL)
-		return (0);
-	while (i < n)
+	len = ft_strlen(src);
+	if (size != 0)
 	{
-		destiny[i] = ((unsigned char *)src)[i];
-		i++;
+		while (i < (size -1) && src[i] != '\0')
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	return (dest);
+	return (len);
 }
 
 /* int main (void) */
 /* { */
 /*     char dest[50] = "La prueba definitiva"; */
 /*     char orig[50] = "Probando"; */
+/* 	int len; */
 /*     //strcpy(dest, "La prueba definitiva"); */
 /*     //strcpy(orig, "Probando"); */
 /*     printf("Destino antes: %s\n", dest); */
-/*     ft_memcpy(dest, orig, 5); */
+/*     len = ft_strlcpy(dest, orig, 5); */
 /*     printf("Destino después: %s\n", dest); */
+/* 	printf("El retorno de la función es: %i", len); */
 /*     return (0); */
 /* } */

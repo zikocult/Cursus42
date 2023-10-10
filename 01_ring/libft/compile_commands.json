@@ -1,0 +1,167 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_isdigit.o",
+      "src/ft_isdigit.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_isdigit.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_isdigit.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_isascii.o",
+      "src/ft_isascii.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_isascii.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_isascii.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_isalnum.o",
+      "src/ft_isalnum.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_isalnum.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_isalnum.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_memmove.o",
+      "src/ft_memmove.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_memmove.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_memmove.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_isprint.o",
+      "src/ft_isprint.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_isprint.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_isprint.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_isalpha.o",
+      "src/ft_isalpha.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_isalpha.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_isalpha.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_bzero.o",
+      "src/ft_bzero.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_bzero.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_bzero.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_memcpy.o",
+      "src/ft_memcpy.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_memcpy.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_memcpy.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_strlen.o",
+      "src/ft_strlen.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_strlen.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_strlen.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_memset.o",
+      "src/ft_memset.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_memset.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_memset.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_strlcpy.o",
+      "src/ft_strlcpy.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_strlcpy.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_strlcpy.o"
+  }
+]
