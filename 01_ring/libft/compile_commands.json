@@ -37,6 +37,36 @@
       "-Werror",
       "-c",
       "-o",
+      "obj/ft_strlcat.o",
+      "src/ft_strlcat.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_strlcat.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_strlcat.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_toupper.o",
+      "src/ft_toupper.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_toupper.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_toupper.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
       "obj/ft_isalnum.o",
       "src/ft_isalnum.c"
     ],
@@ -148,6 +178,21 @@
     "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
     "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_memset.c",
     "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_memset.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "obj/ft_tolower.o",
+      "src/ft_tolower.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_tolower.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_tolower.o"
   },
   {
     "arguments": [
