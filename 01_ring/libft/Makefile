@@ -25,7 +25,7 @@ OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -I.
 AR			= ar rcs
 RANLIB		= ranlib
 RM			= rm -rf
