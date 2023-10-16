@@ -6,7 +6,7 @@
 /*   By: ZikoCult <ZikoCult>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 22:53:45 by ZikoCult          #+#    #+#             */
-/*   Updated: 2023/10/16 17:06:34 by ZikoCult         ###   ########.fr       */
+/*   Updated: 2023/10/16 22:56:48 by ZikoCult         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+int		ft_strncmp(char *s1, char *s2, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 
 #endif

@@ -72,12 +72,44 @@
       "-I.",
       "-c",
       "-o",
+      "obj/ft_memchr.o",
+      "src/ft_memchr.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_memchr.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_memchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I.",
+      "-c",
+      "-o",
       "obj/ft_isalnum.o",
       "src/ft_isalnum.c"
     ],
     "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
     "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_isalnum.c",
     "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_isalnum.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I.",
+      "-c",
+      "-o",
+      "obj/ft_strchr.o",
+      "src/ft_strchr.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_strchr.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_strchr.o"
   },
   {
     "arguments": [
@@ -110,6 +142,38 @@
     "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
     "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_isprint.c",
     "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_isprint.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I.",
+      "-c",
+      "-o",
+      "obj/ft_strncmp.o",
+      "src/ft_strncmp.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_strncmp.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_strncmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I.",
+      "-c",
+      "-o",
+      "obj/ft_strrchr.o",
+      "src/ft_strrchr.c"
+    ],
+    "directory": "/home/ziko/programacio/Cursus42/01_ring/libft",
+    "file": "/home/ziko/programacio/Cursus42/01_ring/libft/src/ft_strrchr.c",
+    "output": "/home/ziko/programacio/Cursus42/01_ring/libft/obj/ft_strrchr.o"
   },
   {
     "arguments": [
