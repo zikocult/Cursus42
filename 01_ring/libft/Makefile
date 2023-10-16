@@ -58,4 +58,6 @@ normi:
 info:
 	$(info $(SRCS_FILES))
 
+bonus:		$(NAME)
+
 .PHONY:		all clean fclean re info normi
