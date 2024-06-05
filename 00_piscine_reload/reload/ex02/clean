@@ -1,0 +1,1 @@
+find $PWD \( -iname '*~' -o -iname '#*#' \) -print 2>/dev/null -exec rm -f {} \;

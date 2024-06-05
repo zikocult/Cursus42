@@ -1,27 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ZikoCult <ZikoCult>                        +#+  +:+       +#+        */
+/*   By: gbaruls- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 22:47:11 by ZikoCult          #+#    #+#             */
-/*   Updated: 2023/10/16 23:25:08 by ZikoCult         ###   ########.fr       */
+/*   Created: 2024/06/05 19:28:44 by gbaruls-          #+#    #+#             */
+/*   Updated: 2024/06/05 19:30:06 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	size_t	i;
-
-	i = 0;
-	while (n > i)
-	{
-		if ((*(unsigned char *)(s + i)) == ((unsigned char)c))
-			return ((void *)(s + i));
-		i++;
-	}
-	return (NULL);
+	*div = a / b;
+	*mod = a % b;
 }
