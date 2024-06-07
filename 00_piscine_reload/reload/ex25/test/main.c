@@ -1,52 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 16:55:24 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/07 11:41:03 by gbaruls-         ###   ########.fr       */
+/*   Created: 2024/06/07 12:11:49 by gbaruls-          #+#    #+#             */
+/*   Updated: 2024/06/07 12:40:50 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "test.h"
 
-int	ft_strlen(char *str)
+int main (void)
 {
-	int	i;
+	int *test, min, max, i;
 
+	min = 0;
+	max = 30;
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*str;
-	int		i;
-
+	
+	test = ft_range(min, max);
+	ft_foreach(test, max - min - 1, &ft_putnbr);
+	
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (!str)
-		return (0);
-	while (src[i])
+	printf("\n");
+	while (i < max - min)
 	{
-		str[i] = src[i];
+		printf("%i\n", test[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	
+	free (test);
+	return (0);
 }
-/*
-int main (int argc, char **argv)
-{
-	char	*tmp;
-	if (argc >= 2)
-	{
-		tmp = ft_strdup(argv[1]);
-		printf("%s\n", tmp);
-		free(tmp);
-	}
-}*/

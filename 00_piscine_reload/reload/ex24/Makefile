@@ -6,7 +6,7 @@
 #    By: gbarulls <gbarulls@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 18:02:47 by gbarulls          #+#    #+#              #
-#    Updated: 2024/06/06 19:30:18 by gbaruls-         ###   ########.fr        #
+#    Updated: 2024/06/07 11:55:44 by gbaruls-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME):	$(OBJSDIRS) $(OBJS)
 			$(AR) $(NAME) $(OBJS)
 			$(RANLIB) $(NAME)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS)
 			$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJSDIRS) :
