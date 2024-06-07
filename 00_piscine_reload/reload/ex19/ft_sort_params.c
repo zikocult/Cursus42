@@ -6,11 +6,13 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 15:17:42 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/06 15:51:33 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/07 18:13:43 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_putchar(char c);
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -20,11 +22,6 @@ int	ft_strcmp(char *s1, char *s2)
 		s2++;
 	}
 	return (*s1 - *s2);
-}
-
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
 }
 
 void	ft_putstr(char *str)
@@ -58,7 +55,7 @@ int	main(int argc, char **argv)
 	int		j;
 	char	*tmp;
 
-	if (argc > 2)
+	if (argc >= 2)
 	{
 		i = 1;
 		while (i < argc)

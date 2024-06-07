@@ -6,22 +6,25 @@
 /*   By: gbaruls- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 19:54:21 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/05 20:02:14 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:48:29 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 int	ft_iterative_factorial(int nb)
 {
-	int	i;
-	int	result;
+	long	result;
+	int		i;
 
-	i = 1;
 	result = 1;
-	if (nb <= 0)
+	i = 1;
+	if (nb == 1 || nb == 0)
 		return (1);
+	else if (nb < 0)
+		return (0);
 	while (i <= nb)
 	{
-		result *= i;
+		result = result * i;
 		i++;
 	}
 	return (result);

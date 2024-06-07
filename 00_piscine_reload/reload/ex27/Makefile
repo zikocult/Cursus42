@@ -6,26 +6,24 @@
 #    By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 16:53:47 by gbaruls-          #+#    #+#              #
-#    Updated: 2024/06/07 18:05:06 by gbaruls-         ###   ########.fr        #
+#    Updated: 2024/06/07 17:03:05 by gbaruls-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libft.a
+NAME		= ft_display_file
 
-SRCS 		= srcs/ft_putstr.c srcs/ft_putchar.c srcs/ft_strcmp.c srcs/ft_strlen.c srcs/ft_swap.c
-OBJS 		= srcs/ft_putstr.o srcs/ft_putchar.o srcs/ft_strcmp.o srcs/ft_strlen.o srcs/ft_swap.o
+SRCS 		= ft_display_file.c
+OBJS		= ft_display_file.o
 
 CC		= cc
 CFLAGS		= -Wall -Werror -Wextra
-AR		= ar rcs
-RANLIB		= ranlib
 RM		= rm -rf
+
 
 all:		$(NAME)
 
-$(NAME):	$(OBJSDIRS) $(OBJS)
-			$(AR) $(NAME) $(OBJS)
-			$(RANLIB) $(NAME)
+$(NAME):	$(OBJS)
+			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c Makefile
 			$(CC) $(CFLAGS) -c $< -o $@
