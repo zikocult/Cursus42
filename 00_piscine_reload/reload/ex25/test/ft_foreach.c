@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 11:48:09 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/07 12:21:24 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/07 14:57:41 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	int	i;
-
-	i = 0;
-	while (i <= length)
-	{
-		f(tab[i]);
-		i++;
-	}
+	while (length-- >= 0)
+		f(*tab++);
 }

@@ -5,32 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 12:11:49 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/07 14:53:22 by gbaruls-         ###   ########.fr       */
+/*   Created: 2024/06/07 14:24:17 by gbaruls-          #+#    #+#             */
+/*   Updated: 2024/06/07 14:51:54 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include <stdio.h>
+#include <string.h>
 
-int main (void)
+int	ft_count_if(char **tab, int (*f)(char*))
 {
-	int *test, min, max, i;
+	int	i;
+	int	count;
 
-	min = -10;
-	max = 30;
 	i = 0;
-	
-	test = ft_range(min, max);
-	ft_foreach(test, max - min - 1, &ft_putnbr);
-	
-	i = 0;
-	printf("\n");
-	while (i < max - min)
+	count = 0;
+	while (tab[i])
 	{
-		printf("%i\n", test[i]);
+		if (f(tab[i]) == 1)
+			count++;
 		i++;
 	}
-	
-	free (test);
+	return (count);
+}
+
+int ft_random(char *tab)
+{
+	if (strlen(tab) > 4)
+		return (0);
+	return (1);
+}
+
+int main (int argc, char **argv)
+{
+	if (argc > 1)
+		printf("%i\n", ft_count_if(argv, &ft_random));
 	return (0);
 }
