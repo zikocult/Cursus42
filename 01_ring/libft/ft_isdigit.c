@@ -6,13 +6,13 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:12:32 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/11 12:16:56 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/11 20:08:09 by ZikoCult         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (0);
