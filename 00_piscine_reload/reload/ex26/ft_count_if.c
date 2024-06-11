@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:15:46 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/07 14:23:41 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/11 10:39:48 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_count_if(char **tab, int (*f)(char*))
 	count = 0;
 	while (tab[i])
 	{
-		if (f(tab[i] == 1))
+		if (f(tab[i]) == 1)
 			count++;
 		i++;
 	}
