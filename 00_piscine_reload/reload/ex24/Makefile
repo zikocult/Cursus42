@@ -6,7 +6,7 @@
 #    By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 16:53:47 by gbaruls-          #+#    #+#              #
-#    Updated: 2024/06/07 18:05:06 by gbaruls-         ###   ########.fr        #
+#    Updated: 2024/06/12 12:50:29 by gbaruls-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,11 @@ RM		= rm -rf
 
 all:		$(NAME)
 
-$(NAME):	$(OBJSDIRS) $(OBJS)
+$(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 			$(RANLIB) $(NAME)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c Makefile
+%.o: %.c Makefile
 			$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

@@ -6,7 +6,7 @@
 #    By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 11:42:44 by gbaruls-          #+#    #+#              #
-#    Updated: 2024/06/11 13:35:47 by gbaruls-         ###   ########.fr        #
+#    Updated: 2024/06/12 18:33:06 by gbaruls-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ SRCS_FILES	= $(shell find . -type f -iname "*.c" | sed 's#[.][^.]*$$##')
 SRCS 		= $(addsuffix .c, $(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(SRCS_FILES))
 
-CC		= gcc
+CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-AR		= ar rcs
+AR			= ar rcs
 RANLIB		= ranlib
-RM		= rm -rf
+RM			= rm -rf
 MKDIR		= mkdir -p
 
 all:		$(NAME)
@@ -43,7 +43,7 @@ fclean:		clean
 re:			fclean $(NAME)
 
 normi:
-	@norminette $(SRCS)
+	@norminette $(SRCS) $(LIBS)
 
 info:
 	$(info $(SRCS_FILES))
