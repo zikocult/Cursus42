@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 18:35:19 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/12 18:55:41 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/13 21:58:44 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	str = (char *)s;
 	while (*str != '\0')
 	{
-		if (*str == c)
+		if (*str == (char)c)
 			return (str);
 		str++;
 	}
-	if (*str == c)
+	if (*str == (char)c)
 		return (str);
 	return (NULL);
 }
