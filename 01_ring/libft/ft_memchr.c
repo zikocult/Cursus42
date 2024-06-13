@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 19:18:14 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/13 12:38:32 by gbaruls-         ###   ########.fr       */
+/*   Created: 2024/06/13 12:40:07 by gbaruls-          #+#    #+#             */
+/*   Updated: 2024/06/13 13:10:16 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i] && i + 1 < (int)n)
+	while (i < n)
+	{
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return ((void *)(s + i));
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	return (NULL);
 }
 /*
-int main(int argc, char **argv)
+int main (int argc, char **argv)
 {
+	char *test;
+	char *test2;
 	if (argc == 3)
 	{
-		printf("%i\n", ft_strncmp(argv[1], argv[2], 5));
-		printf("%i\n", strncmp(argv[1], argv[2], 5));
+		test = ft_memchr(argv[1], argv[2][0], 4);
+		test2 = memchr(argv[1], argv[2][0], 4);
+		printf("test1 - %s\ntest2 - %s\n", test, test2);
 	}
 	return (0);
 }*/
