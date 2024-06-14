@@ -5,15 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 11:48:09 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/07 14:57:41 by gbaruls-         ###   ########.fr       */
+/*   Created: 2024/06/11 10:38:12 by gbaruls-          #+#    #+#             */
+/*   Updated: 2024/06/11 10:39:09 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
-
 void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	while (length-- >= 0)
-		f(*tab++);
+	int	i;
+
+	i = 0;
+	while (i < length)
+	{
+		f(tab[i]);
+		i++;
+	}
 }
