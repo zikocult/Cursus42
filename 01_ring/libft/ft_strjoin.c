@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 18:20:24 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/14 18:43:28 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/15 12:48:54 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,22 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*str;
 
-	i = ft_strlen(s1);
+	i = 0;
 	j = 0;
 	str = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	if (!str)
 		return (NULL);
-	str = ft_strdup(s1);
+	while (s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++;
+	}
 	while (s2[j] != '\0')
-		str[i++] = s2[j++];
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
 	return (str);
 }
 /*
