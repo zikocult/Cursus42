@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 14:43:02 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/15 18:19:34 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/06/15 18:21:56 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	while (start < end)
 		str[i++] = s1[start++];
-	str[i] = 0;
 	return (str);
 }
 /*
