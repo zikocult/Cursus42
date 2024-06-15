@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 18:52:17 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/15 12:57:04 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/06/15 13:42:19 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
-int main()
-{
-	char a[50] = "patata";
-	char b[50] = "patada";
-	char c[50] = "peteda";
-	printf("%s\n", ft_strrchr(a, 'a'));
-	printf("%s\n", ft_strrchr(b, 't'));
-	printf("%s\n", ft_strrchr(c, 'e'));
-}*/
+
+// int main()
+// {
+// 	char a[50] = "patata";
+// 	char b[50] = "patada";
+// 	char c[50] = "peteda";
+// 	printf("%s\n", ft_strrchr(a, 'a'));
+// 	printf("%s\n", ft_strrchr(b, 't'));
+// 	printf("%s\n", ft_strrchr(c, '\0'));
+// }
