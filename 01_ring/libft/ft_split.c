@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:00:33 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/18 08:49:43 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/06/18 08:57:54 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	**ft_split(char const *s, char c)
 		while (s[end] != c && s[end] != '\0')
 			end++;
 		split[count] = ft_strndup_local(&s[start], end - start);
-		if (split[count] == 0)
+		if (!split[count])
 			return (ft_error_mal(split, count));
 		count++;
 	}
