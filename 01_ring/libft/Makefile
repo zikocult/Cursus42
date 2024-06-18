@@ -6,7 +6,7 @@
 #    By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 11:42:44 by gbaruls-          #+#    #+#              #
-#    Updated: 2024/06/18 15:10:41 by gbaruls-         ###   ########.fr        #
+#    Updated: 2024/06/18 19:01:38 by gbaruls-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,17 @@ SRCS_FILES	= ft_memset ft_isdigit ft_isalnum ft_isalpha ft_isprint \
 			  ft_strnstr ft_strrchr ft_putstr_fd ft_strncmp ft_strtrim \
 			  ft_putnbr_fd ft_toupper ft_strlcat ft_strchr ft_atoi \
 			  ft_substr ft_strmapi ft_strlen ft_memchr ft_itoa \
-			  ft_putchar_fd ft_memmove ft_strlcpy ft_tolower ft_memcmp\
+			  ft_putchar_fd ft_memmove ft_strlcpy ft_tolower ft_memcmp \
 			  ft_strdup ft_striteri ft_bzero ft_isascii
 
 SRCS 		= $(addsuffix .c, $(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(SRCS_FILES))
+
+BONUS_FILES	= ft_lstadd_front_bonus ft_lstnew_bonus ft_lstsize_bonus
+
+BONUS_SRCS 		= $(addsuffix .c, $(BONUS_FILES))
+BONUS_OBJS		= $(addsuffix .o, $(BONUS_FILES))
+
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
@@ -37,14 +43,20 @@ $(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 			$(RANLIB) $(NAME)
 
-%.o: %.c $(LIBS) Makefile
+%.o: %.c $(LIBS)
 			$(CC) $(CFLAGS) -c $< -o $@
 
+bonus:		$(BONUS_OBJS) $(OBJS) $(LIBS)
+			$(AR) $(NAME) $(BONUS_OBJS) $(OBJS) 
+			$(RANLIB) $(NAME)
+			@touch $@
+
 clean:
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:		clean
 			$(RM) $(NAME)
+			@$(RM) bonus
 
 re:			fclean $(NAME)
 
@@ -52,8 +64,8 @@ normi:
 	@norminette $(SRCS) $(LIBS)
 
 info:
-	$(info $(SRCS_FILES))
-	$(info $(SRCS))
-	$(info $(OBJS))
+	$(info $(BONUS_FILES))
+	$(info $(BONUS_SRCS))
+	$(info $(BONUS_OBJS))
 
 .PHONY:		all clean fclean re info normi

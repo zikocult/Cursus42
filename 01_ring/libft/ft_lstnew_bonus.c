@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/11 12:12:32 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/18 17:39:53 by gbaruls-         ###   ########.fr       */
+/*   Created: 2024/06/18 17:14:39 by gbaruls-          #+#    #+#             */
+/*   Updated: 2024/06/18 17:18:57 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	t_list	*node;
+
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
-/*
-int main(void)
-{
-	printf("%i\n", isdigit('a'));
-	printf("%i\n", isdigit(1));
-	printf("%i\n", isdigit('1'));
-	printf("%i\n", isdigit('5'));
-	printf("%i\n", isdigit(':'));
-}*/
