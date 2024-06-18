@@ -6,11 +6,12 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:00:33 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/17 21:15:45 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/06/18 08:40:38 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static char	*ft_strndup_local(const char *s, int n)
 {
