@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 15:50:01 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/18 13:16:05 by gbaruls-         ###   ########.fr       */
+/*   Created: 2024/06/18 13:50:17 by gbaruls-          #+#    #+#             */
+/*   Updated: 2024/06/18 14:03:40 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	int		i;
-	int		len;
-	char	*ptr;
-
-	i = 0;
-	len = ft_strlen(s);
-	ptr = (char *)ft_calloc(len + 1, sizeof(char));
-	if (!ptr)
-		return (NULL);
-	while (s[i])
-	{
-		ptr[i] = (char)s[i];
-		i++;
-	}
-	return (ptr);
+	write (fd, &c, 1);
 }
 /*
-int main (int argc, char **argv)
+// Para las pruebas hay que incluir #include <fcntl.h>
+int main (void)
 {
-	if (argc == 2)
-	{
-		char *ptr = ft_strdup(argv[1]);
-		printf("%s\n", ptr);
-		free(ptr);
-	}
+ 	int fd;
+
+ 	fd = open("prueba.txt", O_WRONLY);
+ 	if (fd == -1)
+ 		printf("Error al abrir el archivo\n");
+ 	ft_putchar_fd('a', fd);
+ 	close(fd);
+ 	return (0);
 }*/

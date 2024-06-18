@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 15:50:01 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/18 13:16:05 by gbaruls-         ###   ########.fr       */
+/*   Created: 2024/06/18 12:49:10 by gbaruls-          #+#    #+#             */
+/*   Updated: 2024/06/18 13:07:51 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
-	int		len;
-	char	*ptr;
+	char	*str;
 
 	i = 0;
-	len = ft_strlen(s);
-	ptr = (char *)ft_calloc(len + 1, sizeof(char));
-	if (!ptr)
+	str = ft_strdup(s);
+	if (!str)
 		return (NULL);
-	while (s[i])
+	while (str[i] != '\0')
 	{
-		ptr[i] = (char)s[i];
+		str[i] = (*f)(i, str[i]);
 		i++;
 	}
-	return (ptr);
+	return (str);
 }
-/*
-int main (int argc, char **argv)
-{
-	if (argc == 2)
-	{
-		char *ptr = ft_strdup(argv[1]);
-		printf("%s\n", ptr);
-		free(ptr);
-	}
-}*/
