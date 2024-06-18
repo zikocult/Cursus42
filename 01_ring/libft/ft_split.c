@@ -6,12 +6,11 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:00:33 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/18 08:40:38 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/06/18 08:49:43 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char	*ft_strndup_local(const char *s, int n)
 {
@@ -43,25 +42,21 @@ static char	**ft_error_mal(char **split, int count)
 	return (NULL);
 }
 
-static int	ft_count_word(char const *str, char c)
+static int	ft_count_word(char const *s, char c)
 {
-	int	i;
 	int	count;
-	int	control;
+	int	i;
 
-	i = 0;
 	count = 0;
-	control = 0;
-	while (str[i])
+	i = 0;
+	while (s[i])
 	{
-		if (str[i] != c && control == 0)
-		{
-			control = 1;
+		while (s[i] == c)
+			i++;
+		if (s[i])
 			count++;
-		}
-		else if (str[i] == c)
-			control = 0;
-		i++;
+		while (s[i] && s[i] != c)
+			s++;
 	}
 	return (count);
 }
