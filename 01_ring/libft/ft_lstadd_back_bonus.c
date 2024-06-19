@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 11:16:17 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/19 12:38:33 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/19 15:50:44 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (lst == NULL)
+	if (!lst)
 		return ;
 	if (*lst == NULL)
 	{
