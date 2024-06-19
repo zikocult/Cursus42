@@ -6,7 +6,7 @@
 #    By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 11:42:44 by gbaruls-          #+#    #+#              #
-#    Updated: 2024/06/19 12:59:27 by gbaruls-         ###   ########.fr        #
+#    Updated: 2024/06/19 16:24:48 by gbaruls-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ $(NAME):	$(OBJS)
 
 bonus:		$(BONUS)
 
-$(BONUS):	$(BONUS_OBJS) $(OBJS) $(LIBS)
+$(BONUS):	$(BONUS_OBJS) $(OBJS)
 			$(AR) $(NAME) $(BONUS_OBJS) $(OBJS) 
 			$(RANLIB) $(NAME)
 			@$(TOUCH) $(BONUS)
@@ -64,6 +64,8 @@ fclean:		clean
 
 re:			fclean $(NAME)
 
+rebonus:	fclean $(BONUS)
+
 normi:
 			@norminette $(SRCS) $(BONUS_SRCS) $(LIBS)
 
@@ -72,4 +74,4 @@ info:
 			$(info $(BONUS_SRCS))
 			$(info $(BONUS_OBJS))
 
-.PHONY:		all bonus clean fclean re normi info
+.PHONY:		all bonus clean fclean re rebonus normi info

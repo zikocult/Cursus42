@@ -6,12 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:56:39 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/18 14:22:21 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/19 16:18:18 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <fcntl.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
