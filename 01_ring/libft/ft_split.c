@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:00:33 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/18 08:57:54 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/06/19 21:59:16 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	*ft_strndup_local(const char *s, int n)
 	if (n == 0)
 		return (NULL);
 	str = (char *)ft_calloc(n + 1, sizeof(char));
-	if (str == 0)
+	if (!str)
 		return (NULL);
 	while (i < n)
 	{
@@ -56,7 +56,7 @@ static int	ft_count_word(char const *s, char c)
 		if (s[i])
 			count++;
 		while (s[i] && s[i] != c)
-			s++;
+			i++;
 	}
 	return (count);
 }
