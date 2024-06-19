@@ -6,7 +6,7 @@
 #    By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 11:42:44 by gbaruls-          #+#    #+#              #
-#    Updated: 2024/06/18 19:01:38 by gbaruls-         ###   ########.fr        #
+#    Updated: 2024/06/19 12:59:27 by gbaruls-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRCS_FILES	= ft_memset ft_isdigit ft_isalnum ft_isalpha ft_isprint \
 			  ft_putchar_fd ft_memmove ft_strlcpy ft_tolower ft_memcmp \
 			  ft_strdup ft_striteri ft_bzero ft_isascii
 
-BONUS_FILES	= ft_lstadd_front_bonus ft_lstnew_bonus ft_lstsize_bonus
+BONUS_FILES	= ft_lstadd_front_bonus ft_lstnew_bonus ft_lstsize_bonus \
+			  ft_lstlast_bonus ft_lstadd_back_bonus ft_lstdelone_bonus \
+			  ft_lstclear_bonus ft_lstiter_bonus ft_lstmap_bonus
 
 SRCS 		= $(addsuffix .c, $(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(SRCS_FILES))
@@ -43,7 +45,7 @@ $(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 			$(RANLIB) $(NAME)
 
-%.o: %.c $(LIBS) Makefile
+%.o: %.c	$(LIBS) Makefile
 			$(CC) $(CFLAGS) -c $< -o $@
 
 bonus:		$(BONUS)
