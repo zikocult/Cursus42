@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbarulls <gbarulls@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 23:59:19 by gbarulls          #+#    #+#             */
-/*   Updated: 2024/06/20 17:25:48 by gbaruls-         ###   ########.fr       */
+/*   Created: 2024/06/17 15:00:33 by Guillem Barulls   #+#    #+#             */
+/*   Updated: 2024/06/20 17:26:59 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,14 @@ static char	*ft_strndup_local(const char *s, int n)
 	str = NULL;
 	if (n == 0)
 		return (NULL);
-	str = (char *)malloc(sizeof(char) * (n + 1));
-	if (str == 0)
+	str = (char *)ft_calloc(n + 1, sizeof(char));
+	if (!str)
 		return (NULL);
 	while (i < n)
 	{
 		str[i] = s[i];
 		i++;
 	}
-	str[i] = '\0';
 	return (str);
 }
 
@@ -44,23 +43,25 @@ static char	**ft_error_mal(char **split, int count)
 	return (NULL);
 }
 
-static int	ft_count_word(char const *s, char c)
+static int	ft_count_word(char const *str, char c)
 {
-	int	count;
 	int	i;
+	int	control;
 
-	count = 0;
 	i = 0;
-	while (s[i])
+	control = 0;
+	while (*str)
 	{
-		while (s[i] == c)
+		if (*str != c && control == 0)
+		{
+			control = 1;
 			i++;
-		if (s[i])
-			count++;
-		while (s[i] && s[i] != c)
-			i++;
+		}
+		else if (*str == c)
+			control = 0;
+		str++;
 	}
-	return (count);
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)
@@ -83,7 +84,7 @@ char	**ft_split(char const *s, char c)
 		while (s[end] != c && s[end] != '\0')
 			end++;
 		split[count] = ft_strndup_local(&s[start], end - start);
-		if (split[count] == 0)
+		if (!split[count])
 			return (ft_error_mal(split, count));
 		count++;
 	}

@@ -6,19 +6,18 @@
 #    By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/20 15:32:50 by gbaruls-          #+#    #+#              #
-#    Updated: 2024/06/20 17:11:08 by gbaruls-         ###   ########.fr        #
+#    Updated: 2024/06/20 17:41:46 by gbaruls-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= libft.a
-LIBS			= include/libft.h
-BONUS			= obj/.bonus
-
 OBJ_DIR			= obj/
-SRC_DIR			= src/
 LIB_DIR			= include/
-BONUS_DIR		= bonus/
 
+NAME			= libft.a
+LIBS			= $(LIB_DIR)libft.h
+BONUS			= $(OBJ_DIR).bonus
+
+SRC_DIR			= src/
 SRCS_FILES		= src/ft_strchr src/ft_strdup src/ft_striteri src/ft_strjoin \
 			  	src/ft_strlcat src/ft_strlcpy src/ft_strlen src/ft_strmapi \
 			  	src/ft_strncmp src/ft_strnstr src/ft_strrchr src/ft_strtrim \
@@ -30,11 +29,10 @@ SRCS_FILES		= src/ft_strchr src/ft_strdup src/ft_striteri src/ft_strjoin \
 			  	src/ft_putstr_fd src/ft_split
 
 SRCS 			= $(addsuffix .c, $(SRCS_FILES))
-SRCDIRS			= $(shell find src/ -type d)
-OBJSDIRS		= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCDIRS))
 OBJSTEMP		= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS			= $(addsuffix .o, $(OBJSTEMP))
 
+BONUS_DIR		= bonus/
 BONUS_FILES		= bonus/ft_lstadd_back_bonus bonus/ft_lstadd_front_bonus bonus/ft_lstclear_bonus \
 			  	  bonus/ft_lstdelone_bonus bonus/ft_lstiter_bonus bonus/ft_lstlast_bonus \
 			  	  bonus/ft_lstmap_bonus bonus/ft_lstnew_bonus bonus/ft_lstsize_bonus
@@ -53,22 +51,22 @@ TOUCH			= touch
 
 all:			$(NAME)
 
-$(NAME):		$(OBJSDIRS) $(OBJS)
+$(NAME):		$(OBJ_DIR) $(OBJS)
 				$(AR) $(NAME) $(OBJS)
 				$(RANLIB) $(NAME)
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c $(LIBS) Makefile
 				$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJSDIRS) :
-				$(MKDIR) $(OBJSDIRS)
+$(OBJ_DIR) :
+				$(MKDIR) $(OBJ_DIR)
 
 bonus:			$(BONUS)
 
-$(BONUS):		$(OBJSDIRS) $(BONUS_OBJS) $(OBJS)
+$(BONUS):		$(OBJ_DIR) $(BONUS_OBJS) $(OBJS)
 				$(AR) $(NAME) $(BONUS_OBJS) $(OBJS)
 				$(RANLIB) $(NAME)
-				@$(TOUCH) $(BONUS)
+				$(TOUCH) $(BONUS)
 
 $(OBJ_DIR)%.o:	$(BONUS_DIR)%.c $(LIBS) Makefile
 				$(CC) $(CFLAGS) -c $< -o $@
@@ -78,9 +76,9 @@ clean:
 				$(RM) $(BONUS_OBJS)
 
 fclean:			clean
-				$(RM) $(OBJSDIRS)
+				$(RM) $(OBJ_DIR)
 				$(RM) $(NAME)
-				@$(RM) $(BONUS)
+				$(RM) $(BONUS)
 
 re:				fclean $(NAME)
 
