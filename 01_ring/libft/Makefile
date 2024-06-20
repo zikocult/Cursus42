@@ -5,73 +5,89 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/11 11:42:44 by gbaruls-          #+#    #+#              #
-#    Updated: 2024/06/19 16:24:48 by gbaruls-         ###   ########.fr        #
+#    Created: 2024/06/20 15:32:50 by gbaruls-          #+#    #+#              #
+#    Updated: 2024/06/20 17:11:08 by gbaruls-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libft.a
-LIBS		= libft.h
-BONUS		= .bonus
+NAME			= libft.a
+LIBS			= include/libft.h
+BONUS			= obj/.bonus
 
-SRCS_FILES	= ft_memset ft_isdigit ft_isalnum ft_isalpha ft_isprint \
-			  ft_putendl_fd ft_memcpy ft_calloc ft_split ft_strjoin \
-			  ft_strnstr ft_strrchr ft_putstr_fd ft_strncmp ft_strtrim \
-			  ft_putnbr_fd ft_toupper ft_strlcat ft_strchr ft_atoi \
-			  ft_substr ft_strmapi ft_strlen ft_memchr ft_itoa \
-			  ft_putchar_fd ft_memmove ft_strlcpy ft_tolower ft_memcmp \
-			  ft_strdup ft_striteri ft_bzero ft_isascii
+OBJ_DIR			= obj/
+SRC_DIR			= src/
+LIB_DIR			= include/
+BONUS_DIR		= bonus/
 
-BONUS_FILES	= ft_lstadd_front_bonus ft_lstnew_bonus ft_lstsize_bonus \
-			  ft_lstlast_bonus ft_lstadd_back_bonus ft_lstdelone_bonus \
-			  ft_lstclear_bonus ft_lstiter_bonus ft_lstmap_bonus
+SRCS_FILES		= src/ft_strchr src/ft_strdup src/ft_striteri src/ft_strjoin \
+			  	src/ft_strlcat src/ft_strlcpy src/ft_strlen src/ft_strmapi \
+			  	src/ft_strncmp src/ft_strnstr src/ft_strrchr src/ft_strtrim \
+			  	src/ft_substr src/ft_tolower src/ft_toupper src/ft_atoi \
+			  	src/ft_bzero src/ft_calloc src/ft_isalnum src/ft_isalpha \
+			  	src/ft_isascii src/ft_isdigit src/ft_isprint src/ft_itoa \
+			  	src/ft_memchr src/ft_memcmp src/ft_memcpy src/ft_memmove \
+			  	src/ft_memset src/ft_putchar_fd src/ft_putendl_fd src/ft_putnbr_fd \
+			  	src/ft_putstr_fd src/ft_split
 
-SRCS 		= $(addsuffix .c, $(SRCS_FILES))
-OBJS		= $(addsuffix .o, $(SRCS_FILES))
-BONUS_SRCS 	= $(addsuffix .c, $(BONUS_FILES))
-BONUS_OBJS	= $(addsuffix .o, $(BONUS_FILES))
+SRCS 			= $(addsuffix .c, $(SRCS_FILES))
+SRCDIRS			= $(shell find src/ -type d)
+OBJSDIRS		= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCDIRS))
+OBJSTEMP		= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
+OBJS			= $(addsuffix .o, $(OBJSTEMP))
 
-CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
-AR			= ar rcs
-RANLIB		= ranlib
-RM			= rm -rf
-MKDIR		= mkdir -p
-TOUCH		= touch
+BONUS_FILES		= bonus/ft_lstadd_back_bonus bonus/ft_lstadd_front_bonus bonus/ft_lstclear_bonus \
+			  	  bonus/ft_lstdelone_bonus bonus/ft_lstiter_bonus bonus/ft_lstlast_bonus \
+			  	  bonus/ft_lstmap_bonus bonus/ft_lstnew_bonus bonus/ft_lstsize_bonus
 
-all:		$(NAME)
+BONUS_SRCS 		= $(addsuffix .c, $(BONUS_FILES))
+B_OBJSTEMP		= $(patsubst $(BONUS_DIR)%,$(OBJ_DIR)%,$(BONUS_FILES))
+BONUS_OBJS		= $(addsuffix .o, $(B_OBJSTEMP))
 
-$(NAME):	$(OBJS)
-			$(AR) $(NAME) $(OBJS)
-			$(RANLIB) $(NAME)
+CC				= gcc
+CFLAGS			= -Wall -Wextra -Werror
+AR				= ar rcs
+RANLIB			= ranlib
+RM				= rm -rf
+MKDIR			= mkdir -p
+TOUCH			= touch
 
-%.o: %.c	$(LIBS) Makefile
-			$(CC) $(CFLAGS) -c $< -o $@
+all:			$(NAME)
 
-bonus:		$(BONUS)
+$(NAME):		$(OBJSDIRS) $(OBJS)
+				$(AR) $(NAME) $(OBJS)
+				$(RANLIB) $(NAME)
 
-$(BONUS):	$(BONUS_OBJS) $(OBJS)
-			$(AR) $(NAME) $(BONUS_OBJS) $(OBJS) 
-			$(RANLIB) $(NAME)
-			@$(TOUCH) $(BONUS)
+$(OBJ_DIR)%.o:	$(SRC_DIR)%.c $(LIBS) Makefile
+				$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJSDIRS) :
+				$(MKDIR) $(OBJSDIRS)
+
+bonus:			$(BONUS)
+
+$(BONUS):		$(OBJSDIRS) $(BONUS_OBJS) $(OBJS)
+				$(AR) $(NAME) $(BONUS_OBJS) $(OBJS)
+				$(RANLIB) $(NAME)
+				@$(TOUCH) $(BONUS)
+
+$(OBJ_DIR)%.o:	$(BONUS_DIR)%.c $(LIBS) Makefile
+				$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-			$(RM) $(OBJS) $(BONUS_OBJS)
+				$(RM) $(OBJS)
+				$(RM) $(BONUS_OBJS)
 
-fclean:		clean
-			$(RM) $(NAME)
-			@$(RM) $(BONUS)
+fclean:			clean
+				$(RM) $(OBJSDIRS)
+				$(RM) $(NAME)
+				@$(RM) $(BONUS)
 
-re:			fclean $(NAME)
+re:				fclean $(NAME)
 
-rebonus:	fclean $(BONUS)
-
-normi:
-			@norminette $(SRCS) $(BONUS_SRCS) $(LIBS)
+rebonus:		fclean $(BONUS)
 
 info:
-			$(info $(BONUS_FILES))
-			$(info $(BONUS_SRCS))
-			$(info $(BONUS_OBJS))
+				$(info $(SRCS_FILES))
+				$(info $(BONUS_FILES))
 
-.PHONY:		all bonus clean fclean re rebonus normi info
+.PHONY:		all bonus clean fclean re rebonus info
