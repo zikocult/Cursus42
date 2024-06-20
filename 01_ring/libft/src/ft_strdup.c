@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 15:50:01 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:54:03 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:26:27 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 char	*ft_strdup(const char *s)
 {

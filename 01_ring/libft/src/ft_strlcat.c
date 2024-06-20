@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 17:49:21 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:54:16 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:26:46 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

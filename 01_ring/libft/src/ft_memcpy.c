@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 15:55:05 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:53:27 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:25:09 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:22:52 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:32:53 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:24:25 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 int	ft_isascii(int c)
 {

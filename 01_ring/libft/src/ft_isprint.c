@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:28:07 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:53:08 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:24:41 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 int	ft_isprint(int c)
 {

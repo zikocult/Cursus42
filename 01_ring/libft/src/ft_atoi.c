@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 14:39:40 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:29:33 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:22:23 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 int	ft_atoi(const char *ptr)
 {

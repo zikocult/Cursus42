@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 18:52:17 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:54:41 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:27:20 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:38:33 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:53:31 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:25:17 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

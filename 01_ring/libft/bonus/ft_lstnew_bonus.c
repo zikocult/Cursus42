@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 17:14:39 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:57:02 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:29:23 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 t_list	*ft_lstnew(void *content)
 {

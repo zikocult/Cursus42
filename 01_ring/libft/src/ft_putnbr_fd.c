@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:26:16 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:53:47 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:26:02 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 void	ft_putnbr_fd(int nb, int fd)
 {

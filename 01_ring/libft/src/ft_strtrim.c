@@ -6,11 +6,11 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 14:43:02 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/20 16:54:44 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:27:26 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 static int	ft_set(char str, const char *set)
 {

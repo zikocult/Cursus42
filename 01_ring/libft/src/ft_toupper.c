@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 18:19:16 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:54:59 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:27:43 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 int	ft_toupper(int c)
 {

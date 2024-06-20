@@ -6,11 +6,11 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:56:39 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 16:53:50 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 19:26:08 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

@@ -11,11 +11,10 @@
 # **************************************************************************** #
 
 OBJ_DIR			= obj/
-LIB_DIR			= include/
 
 NAME			= libft.a
-LIBS			= $(LIB_DIR)libft.h
-BONUS			= $(OBJ_DIR).bonus
+BONUS			= obj/.bonus
+LIBS			= libft.h
 
 SRC_DIR			= src/
 SRCS_FILES		= src/ft_strchr src/ft_strdup src/ft_striteri src/ft_strjoin \
