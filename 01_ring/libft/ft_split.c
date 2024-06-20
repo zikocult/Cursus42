@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 15:00:33 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/20 09:53:51 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/06/20 10:01:12 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*ft_strndup_local(const char *s, int n)
 	char	*str;
 
 	i = 0;
-	str  = NULL;
+	str = NULL;
 	if (n == 0)
 		return (NULL);
 	str = (char *)ft_calloc(n + 1, sizeof(char));
