@@ -4,7 +4,6 @@ I will explain all my path in the Common Core in 42 School Barcelona.
 
 **Be free to contact with me:**
 <div align="left">
-  <br>
   <a href = "mailto:gbarulls@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
   <a href="https://www.linkedin.com/in/guillem-barulls-casades%C3%BAs-9906001a/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </div>
@@ -15,6 +14,8 @@ I will explain all my path in the Common Core in 42 School Barcelona.
 
 - [Piscine Reload](https://github.com/zikocult/Cursus42/tree/main/00_piscine_reload/reload) 
 	- A complete collection of exercises to remember what you have learned, a good form of training before the real "Common Core"
+ 	- Used tecnologies:
+  		- C / Bash / Git / Makefile
 <p align="left">
   <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/Reload.png?raw=true" />
 </p>
@@ -23,6 +24,8 @@ I will explain all my path in the Common Core in 42 School Barcelona.
 
 - [LIBFT](https://github.com/zikocult/Cursus42/tree/main/01_ring/libft)
 	- This is my first project in 42 School, programming some functions in C, this is the base of the next projects as 42 student.
+   	- Used tecnologies:
+  		- C / Git / Makefile
 <p align="left">
   <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/LibFt.png?raw=true" />
 </p>
@@ -31,12 +34,16 @@ I will explain all my path in the Common Core in 42 School Barcelona.
 
 - [ft_printf](https://github.com/zikocult/Cursus42/tree/main/02_ring/printf)
 	- Recoding the famous function PRINTF for my own.
+ 	- Used tecnologies:
+  		- C / Git / Makefile
 <p align="left">
   <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/Work_in_progress.png?raw=true" />
 </p>
 
 - [Born2beroot](https://github.com/zikocult/Cursus42/tree/main/02_ring/born2beroot)
 	- Linux and the virtualization comes together in this project, becoming a real Linux system administrator
+ 	- Used tecnologies:
+  		- Debian / Rocky Linux / Bash / Vi / VirtualBox / KVM 
  <p align="left">
   <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/Work_in_progress.png?raw=true" />
 </p>
