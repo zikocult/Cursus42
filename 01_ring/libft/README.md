@@ -1,8 +1,8 @@
 
-- [What is LibFT?](###What-is-libft)
-- [Mandatory functions](###Mandatory)
-- [Bonus functions](###Bonus_Functions)
-- [Running and creating the library, the makefile rules](###Running)
+- [What is LibFT?](#What-is-libft)
+- [Mandatory functions](#Mandatory)
+- [Bonus functions](#Bonus_Functions)
+- [Running and creating the library, the makefile rules](#Running)
 
 ### What-is-libft
 
@@ -11,6 +11,9 @@ Libft is an individual project at [42 Barcelona][1] that requieres us to re-crea
 At 42 we are not allowed to use some standard libraries on our projects, so we have to keep growing this libary with our own functions as we go farther in the program.
 
 The used technologies for this project: C / git / Makefile
+
+
+https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/libft/libftdetail.png?raw=true
 
 ![[libftdetail.png]]
 ### Mandatory
