@@ -18,7 +18,7 @@ At 42 we are not allowed to use some standard libraries on our projects, so we h
 
 The used technologies for this project: C / git / Makefile
 <p align="left">
-  <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/libft/libftdetail.png?raw=true" />
+  <a href=""><img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/libft/libftdetail.png?raw=true" /></a>
 </p>
 
 ### Mandatory
@@ -105,7 +105,7 @@ The next commands are included in the makefile:
 A visual example and the final result:
 
 <p align="left">
-  <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/libft/make.png?raw=true" />
+  <a href=""><img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/libft/make.png?raw=true" /></a>
 </p>
 
 
