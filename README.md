@@ -21,7 +21,9 @@
 ### [**Milestone 02:**](https://github.com/zikocult/Cursus42/tree/main/02_ring)
 
 - [ft_printf](https://github.com/zikocult/Cursus42/tree/main/02_ring/printf)
-	- Recoding the famous function PRINTF for my own.   
+	- Recoding the famous function PRINTF for my own.
+
+![Work in progress](https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/Work_in_progress.png?raw=true)
 
 <p align="left">
   <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/Work_in_progress.png?raw=true" />
