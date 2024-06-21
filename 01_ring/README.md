@@ -88,7 +88,7 @@ typedef struct s_list
 
 We only need to execute **make** commad to create the final library with the mandatory part, to compile the library with the bonus part too, **make bonus** is the command to use.
 
-The create library is named **libft.a**, be free of used in your projects if you want.
+The create library is named **libft.a**, be free of use it in your projects if you want.
 
 The next commands are included in the makefile:
 
