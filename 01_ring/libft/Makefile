@@ -65,7 +65,7 @@ bonus:			$(BONUS)
 $(BONUS):		$(OBJ_DIR) $(BONUS_OBJS) $(OBJS)
 				$(AR) $(NAME) $(BONUS_OBJS) $(OBJS)
 				$(RANLIB) $(NAME)
-				$(TOUCH) $(BONUS)
+				@$(TOUCH) $(BONUS)
 
 $(OBJ_DIR)%.o:	$(BONUS_DIR)%.c $(LIBS) Makefile
 				$(CC) $(CFLAGS) -c $< -o $@
