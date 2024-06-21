@@ -101,6 +101,7 @@ The next commands are included in the makefile:
 | **make fclean**  | Clean all the files and folders created         |
 | **make re**      | Fclean + create the basic library               |
 | **make rebonus** | Fclean + create the library with the bonus part |
+
 A visual example and the final result:
 
 <p align="left">
