@@ -1,6 +1,6 @@
 # 42 Common Core
 
-I will explain all my path in the Common Core in 42 School Barcelona.
+I will show and explain all my path in the Common Core in [42 School Barcelona][1].
 
 *Be free to contact with me:*
 <div align="left">
@@ -40,3 +40,4 @@ I will explain all my path in the Common Core in 42 School Barcelona.
 	- Used tecnologies:
 		- Debian / Rocky Linux / Bash / Vi / VirtualBox / KVM 
 
+[1]: https://www.42barcelona.com/
