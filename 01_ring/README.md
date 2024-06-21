@@ -1,4 +1,4 @@
-I finished the first milestone in my way to complete the common core at [42 Barcelona][1]
+I finished the first milestone in my way to complete the common core at [42 Barcelona][1], in this milestone we only have one project **LibFT**.
 
 - [What is LibFT?](#What-is-libft)
 - [Mandatory functions](#Mandatory)
