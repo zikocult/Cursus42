@@ -2,8 +2,7 @@
 
 I will explain all my path in the Common Core in 42 School Barcelona.
 
-#### Be free to contact with me:
-
+**Be free to contact with me:**
 <div align="left">
   <br>
   <a href = "mailto:gbarulls@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
