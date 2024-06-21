@@ -35,7 +35,7 @@ I will show and explain all my path in the Common Core in [42 School Barcelona][
 	  	- C / Git / Makefile
 
 - [Born2beroot](https://github.com/zikocult/Cursus42/tree/main/02_ring/born2beroot)
-	- - **Work in progress** 🚨
+	- **Work in progress** 🚨
 	- Linux and the virtualization comes together in this project, becoming a real Linux system administrator
 	- Used tecnologies:
 		- Debian / Rocky Linux / Bash / Vi / VirtualBox / KVM 
