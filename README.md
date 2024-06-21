@@ -1,4 +1,14 @@
-# cursus
-42 Cursus
+# 42 Common Core
 
-All the exercises and tests, my evolution as a 42 student.
+### **Milestone 00:**
+
+- [Piscine Reload](https://github.com/zikocult/Cursus42/tree/main/00_piscine_reload/reload) 
+	- A complete collection of exercises to remember what you have learned, a good form of training before the real "Common Core"
+
+![[Pasted image 20240621092223.png]]
+
+
+
+
+
+
