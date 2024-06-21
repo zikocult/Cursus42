@@ -12,10 +12,10 @@ At 42 we are not allowed to use some standard libraries on our projects, so we h
 
 The used technologies for this project: C / git / Makefile
 
+<p align="left">
+  <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/libft/libftdetail.png?raw=true" />
+</p>
 
-https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/libft/libftdetail.png?raw=true
-
-![[libftdetail.png]]
 ### Mandatory
 
 | Function   | Declaration                                                            | Description                                                            |
@@ -97,7 +97,10 @@ make re
 
 A visual example:
 
-![[make.png]]
+
+<p align="left">
+  <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/libft/make.png?raw=true" />
+</p>
 
 *Be free to contact with me:*
 <div align="left">
