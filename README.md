@@ -10,9 +10,6 @@
 </p>
 
 
- ![Succes](https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/Pasted%20image%2020240621092223.png?raw=true) 
-
-
 
 
 
