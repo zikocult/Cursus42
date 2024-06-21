@@ -27,7 +27,7 @@ I will explain all my path in the Common Core in 42 School Barcelona.
 	   	- Used tecnologies:
 	  		- C / Git / Makefile
 <p align="left">
-  <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/LibFt.png?raw=true" />
+  <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/libft/LibFt.png?raw=true" />
 </p>
 
 ### [**Milestone 02:**](https://github.com/zikocult/Cursus42/tree/main/02_ring)
