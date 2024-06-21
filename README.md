@@ -14,7 +14,7 @@ I will explain all my path in the Common Core in 42 School Barcelona.
 
 - [Piscine Reload](https://github.com/zikocult/Cursus42/tree/main/00_piscine_reload/reload) 
 	- A complete collection of exercises to remember what you have learned, a good form of training before the real "Common Core"
-	 	- Used tecnologies:
+	- Used tecnologies:
 		- C / Bash / Git / Makefile
 <p align="left">
   <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/Reload.png?raw=true" />
@@ -24,8 +24,8 @@ I will explain all my path in the Common Core in 42 School Barcelona.
 
 - [LIBFT](https://github.com/zikocult/Cursus42/tree/main/01_ring/libft)
 	- This is my first project in 42 School, programming some functions in C, this is the base of the next projects as 42 student.
-	   	- Used tecnologies:
-	  		- C / Git / Makefile
+	- Used tecnologies:
+	  	- C / Git / Makefile
 <p align="left">
   <img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/libft/LibFt.png?raw=true" />
 </p>
