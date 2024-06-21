@@ -13,7 +13,7 @@ I will explain all my path in the Common Core in 42 School Barcelona.
 ### [**Milestone 00:**](https://github.com/zikocult/Cursus42/tree/main/00_piscine_reload)
 
 - [Piscine Reload](https://github.com/zikocult/Cursus42/tree/main/00_piscine_reload/reload) 
-	- **100% completed** ![125%](https://cdn.jsdelivr.net/gh/Readme-Workflows/Readme-Icons@main/icons/octicons/ApprovedChanges.svg) ✅
+	- **100% completed** ✅
 	- A complete collection of exercises to remember what you have learned, a good form of training before the real "Common Core"
 	- Used tecnologies:
 		- C / Bash / Git / Makefile
@@ -21,7 +21,7 @@ I will explain all my path in the Common Core in 42 School Barcelona.
 ### [**Milestone 01:**](https://github.com/zikocult/Cursus42/tree/main/01_ring)
 
 - [LIBFT](https://github.com/zikocult/Cursus42/tree/main/01_ring/libft)  
-	- **125% completed** ![125%](https://cdn.jsdelivr.net/gh/Readme-Workflows/Readme-Icons@main/icons/octicons/ApprovedChanges.svg)
+	- **125% completed** ✅
 	- This is my first project in 42 School, programming some functions in C, this is the base of the next projects as 42 student.
 	- Used tecnologies:
 	  	- C / Git / Makefile
