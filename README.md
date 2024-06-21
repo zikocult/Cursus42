@@ -1,6 +1,6 @@
 # 42 Common Core
 
-### **Milestone 00:**
+### [**Milestone 00:**](https://github.com/zikocult/Cursus42/tree/main/00_piscine_reload)
 
 - [Piscine Reload](https://github.com/zikocult/Cursus42/tree/main/00_piscine_reload/reload) 
 	- A complete collection of exercises to remember what you have learned, a good form of training before the real "Common Core"
