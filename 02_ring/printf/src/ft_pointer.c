@@ -6,17 +6,14 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:21:43 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/27 14:15:54 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/06/27 14:47:06 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-static void	ft_hexa_point_pf(unsigned long int pointer, int *count)
+static void	ft_hexa_point_pf(unsigned long int nb, int *count)
 {
-	unsigned long int	nb;
-
-	nb = pointer;
 	if (nb >= 16)
 	{
 		ft_hexa_point_pf(nb / 16, count);
