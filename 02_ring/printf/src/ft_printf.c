@@ -6,19 +6,11 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 12:26:19 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/27 14:01:02 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/06/27 18:26:54 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
-void	funciontemp(void)
-{
-	int	i;
-
-	i = 0;
-	i++;
-}
 
 static void	ft_case_pf(va_list args, const char format, int *count)
 {
