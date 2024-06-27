@@ -10,56 +10,53 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libftprintf.a
-LIBS_FILES	= include/ft_printf
-LIBS 		= $(addsuffix .h, $(LIBS_FILES))
+NAME			= libftprintf.a
 
-LIB_DIR		= include/
-SRC_DIR		= src/
-OBJ_DIR		= obj/
+LIB_DIR			= include/
+LIBS			= include/ft_printf.h
 
-SRCS_FILES	= $(shell find src -type f -iname "*.c" | sed 's#[.][^.]*$$##')
-SRCDIRS		= $(shell find src/ -type d)
-SRCS 		= $(addsuffix .c, $(SRCS_FILES))
+SRC_DIR			= src/
+SRCS_FILES		= src/ft_strings src/ft_number src/ft_pointer src/ft_printf
+SRCS 			= $(addsuffix .c, $(SRCS_FILES))
 
-OBJSDIRS	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCDIRS))
-OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
-OBJS		= $(addsuffix .o, $(OBJSTEMP))
+OBJ_DIR			= obj/
+OBJSTEMP		= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
+OBJS			= $(addsuffix .o, $(OBJSTEMP))
 
-CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
-AR			= ar rcs
-RANLIB		= ranlib
-RM			= rm -rf
-MKDIR		= mkdir -p
+CC				= gcc
+CFLAGS			= -Wall -Wextra -Werror
+AR				= ar rcs
+RANLIB			= ranlib
+RM				= rm -rf
+MKDIR			= mkdir -p
 
-all:		$(NAME)
+all:			$(NAME)
 
-$(NAME):	$(OBJSDIRS) $(OBJS)
-			$(AR) $(NAME) $(OBJS)
-			$(RANLIB) $(NAME)
+$(NAME):		$(OBJ_DIR) $(OBJS)
+				$(AR) $(NAME) $(OBJS)
+				$(RANLIB) $(NAME)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
-			$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)%.o:	$(SRC_DIR)%.c $(LIBS) Makefile
+				$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJSDIRS) :
-			$(MKDIR) $(OBJSDIRS)
+$(OBJ_DIR) :
+				$(MKDIR) $(OBJ_DIR)
 
 clean:
-			$(RM) $(OBJS)
+				$(RM) $(OBJS)
 
-fclean:		clean
-			$(RM) $(OBJSDIRS)
-			$(RM) $(NAME)
+fclean:			clean
+				$(RM) $(OBJ_DIR)
+				$(RM) $(NAME)
 
-re:			fclean $(NAME)
+re:				fclean $(NAME)
 
 normi:
-			@norminette $(SRCS)
-			@norminette $(LIBS)
+				@norminette $(SRCS)
+				@norminette $(LIBS)
 
 info:
-			$(info $(SRCS_FILES))
-			$(info $(SRCDIRS))
+				$(info $(SRCS_FILES))
+				$(info $(SRCDIRS))
 
-.PHONY:		all clean fclean re info normi
+.PHONY:			all clean fclean re info normi
