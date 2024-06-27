@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME		= libftprintf.a
-LIBS_FILES	= include/libftprintf
+LIBS_FILES	= include/ft_printf
 LIBS 		= $(addsuffix .h, $(LIBS_FILES))
 
 LIB_DIR		= include/

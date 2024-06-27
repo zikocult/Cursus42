@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 10:51:58 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/06/20 19:24:48 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/06/25 08:21:06 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,12 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		n *= -1;
 	}
-	while (n / 10 >= 0)
+	while (n / 10 > 0)
 	{
 		str[i - 1] = (n % 10) + '0';
 		i--;
-		if (n / 10 == 0)
-			return (str);
 		n = n / 10;
 	}
+	str[i - 1] = (n % 10) + '0';
 	return (str);
 }
