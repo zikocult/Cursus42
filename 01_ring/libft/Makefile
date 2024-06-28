@@ -6,7 +6,7 @@
 #    By: gbaruls- <gbaruls-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/20 15:32:50 by gbaruls-          #+#    #+#              #
-#    Updated: 2024/06/20 17:41:46 by gbaruls-         ###   ########.fr        #
+#    Updated: 2024/06/28 18:17:33 by gbaruls-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ clean:
 fclean:			clean
 				$(RM) $(OBJ_DIR)
 				$(RM) $(NAME)
-				$(RM) $(BONUS)
+				@$(RM) $(BONUS)
 
 re:				fclean $(NAME)
 
