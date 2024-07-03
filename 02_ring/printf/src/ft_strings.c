@@ -6,11 +6,12 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 12:38:33 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/27 13:10:29 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/07/03 13:18:36 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+#include <unistd.h>
 
 void	ft_putchar_pf(char c, int *count)
 {

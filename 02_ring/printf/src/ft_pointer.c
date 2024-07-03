@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:21:43 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/28 15:47:54 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/07/03 13:19:47 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	ft_hexa_point_pf(unsigned long int nb, int *count)
 
 void	ft_pointer_pf(void *pointer, int *count)
 {
-	if (pointer == NULL && *count != -1)
+	if (!pointer && *count != -1)
 	{
 		ft_putstr_pf("(nil)", count);
 		return ;

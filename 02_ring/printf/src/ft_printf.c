@@ -6,11 +6,12 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 12:26:19 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/06/27 18:26:54 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/07/03 13:18:51 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+#include <stdarg.h>
 
 static void	ft_case_pf(va_list args, const char format, int *count)
 {
