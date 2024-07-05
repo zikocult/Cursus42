@@ -1,11 +1,13 @@
 decrypt hd pass: ramona
+IP: 10.11.250.217
 root pass: Barcelona42!
 user pass: Mangotero42!
-IP: 10.11.250.217
 
 Bonus part:
 
 Lighttpd: http://10.11.250.217/
 PHP: http://10.11.250.217/phpinfo.php
 wordpress: http://10.11.250.217/wp-admin/
+	user wp: wordpress
+	pass wp: Pass123
 cockpit: https://10.11.250.217:9090/
