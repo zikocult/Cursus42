@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls->                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 10:19:22 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/07/06 23:03:42 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/07/07 00:54:44 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *str_gnl_temp, char *str_tmp, char *temp);
+char	*ft_strjoin2(char const *s1, char const *s2);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5

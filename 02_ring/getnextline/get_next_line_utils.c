@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls->                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 10:58:41 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/07/05 13:01:17 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/07/07 01:13:40 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,40 @@ char	*ft_strdup(const char *s)
 	return (ptr);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *str_gnl_temp, char *str_tmp, char *temp)
+{
+	int		i;
+	int		j;
+	char	*str;
+
+	i = 0;
+	j = 0;
+	str = (char *)malloc(ft_strlen(str_gnl_temp) + ft_strlen(str_tmp) + 1 * sizeof(char));
+	if (!str)
+		return (NULL);
+	while (str_gnl_temp[i] != '\0' && str_gnl_temp[i] != '\0' && str_gnl_temp[i] != 0)
+	{
+		str[i] = str_gnl_temp[i];
+		i++;
+	}
+	if (str_gnl_temp[i] == '\0')
+	{
+		temp = (char *)malloc(ft_strlen(&str_gnl_temp[i] + 1 * sizeof(char)));
+		if (!temp)
+			return (NULL);
+		temp = ft_strdup(&str_gnl_temp[i]);
+	}
+	while (str_tmp[j] != '\0')
+	{
+		str[i] = str_tmp[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+char	*ft_strjoin2(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
@@ -62,6 +95,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 		j++;
 	}
-	str[i] = '\0';
 	return (str);
 }
+
