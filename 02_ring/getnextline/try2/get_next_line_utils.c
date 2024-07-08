@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 20:08:08 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/08 20:35:42 by Guillem Barulls  ###   ########.fr       */
+/*   Created: 2024/07/08 12:34:04 by Guillem Barulls   #+#    #+#             */
+/*   Updated: 2024/07/08 20:02:34 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,58 +26,59 @@ size_t	ft_strlen(char *s)
 
 char	*ft_strchr(char *s, int c)
 {
-	int	i;
-
-	i = 0;
 	if (!s)
 		return (NULL);
-	if (c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		if (s[i] == (char) c)
-			return ((char *)&s[i]);
-		i++;
+		if (*s == (char)c)
+			return (s);
+		s++;
 	}
-	return (NULL);
+	if (*s == (char)c)
+		return (s);
+	return (0);
 }
 
-char	*join_dup(char *gnl, char *buff)
+char	*copy_str(char *gnl_str, char *buff, char *str)
 {
-	int		i;
-	int		j;
-	int		len;
-	char	*str;
+	int	i;
+	int	j;
 
-	len = ft_strlen(gnl) + ft_strlen(buff);
-	str = (char *)malloc(((len + 1) * sizeof(char)));
-	if (!str)
-		return (NULL);
-	i = -1;
+	i = 0;
 	j = 0;
-	if (gnl)
-		while (gnl[++i] != '\0')
-			str[i] = gnl[i];
+	while (gnl_str[i] != '\0')
+	{
+		str[i] = gnl_str[i];
+		i++;
+	}
 	while (buff[j] != '\0')
-		str[i++] = buff[j++];
-	str[ft_strlen(gnl) + ft_strlen(buff)] = '\0';
+	{
+		str[i] = buff[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
 	return (str);
 }
 
-char	*ft_strjoin(char *gnl, char *buff)
+char	*ft_strjoin(char *gnl_str, char *buff)
 {
 	char	*str;
 
-	if (!gnl)
+	if (!gnl_str)
 	{
-		gnl = (char *)malloc(1 * sizeof(char));
-		if (!gnl)
+		gnl_str = (char *)malloc(1 * sizeof(char));
+		if (!gnl_str)
 			return (NULL);
-		gnl[0] = '\0';
+		gnl_str[0] = '\0';
 	}
-	if (!gnl || !buff)
+	if (!gnl_str || !buff)
 		return (NULL);
-	str = join_dup(gnl, buff);
-	free(gnl);
+	str = (char *)malloc(((ft_strlen(gnl_str) + ft_strlen(buff)) + 1)
+			* sizeof(char));
+	if (!str)
+		return (NULL);
+	str = copy_str(gnl_str, buff, str);
+	free(gnl_str);
 	return (str);
 }
