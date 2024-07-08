@@ -5,7 +5,7 @@
 
 int main (void)
 {
-	char	*str_gnl;
+	char	*line;
 	ssize_t	fd;
 	int		i = 0;
 	int		counter = 0;
@@ -30,12 +30,12 @@ int main (void)
 		printf("Caraculo!");
 		return (1);
 	}
-	while (i++ < counter)
+	while (i++ <= counter)
 	{
-		str_gnl = get_next_line(fd);
-		printf("%s\n", str_gnl);
+		line = get_next_line(fd);
+		printf("%s\n", line);
+		free(line);
 	}
 	close(fd);
-	free(str_gnl);
 	return (0);
 }

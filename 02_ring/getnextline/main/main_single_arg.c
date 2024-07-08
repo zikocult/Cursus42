@@ -5,7 +5,7 @@
 
 int main (int argc, char **argv)
 {
-	char *str_gnl;
+	char *line;
 	ssize_t	fd;
 	int	i = 0;
 	int counter = 0;
@@ -34,11 +34,11 @@ int main (int argc, char **argv)
 		}
 		while (i++ < counter)
 		{
-			str_gnl = get_next_line(fd);
-			printf("%s\n", str_gnl);
+			line = get_next_line(fd);
+			printf("%s\n", line);
+			free(line);
 		}
 		close(fd);
-		free(str_gnl);
 	}	
 	else
 		printf("Faltan argumentos para seguir\n");
