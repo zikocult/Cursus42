@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 20:13:14 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/09 11:05:38 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/07/09 13:16:24 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <unistd.h>
 
 char	*ft_read_all(int fd, char *gnl_str)
@@ -94,20 +94,20 @@ char	*ft_save_line(char *gnl_str)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*gnl_str;
+	static char	*gnl_str[OPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
-		if (gnl_str)
-			free(gnl_str);
+		if (gnl_str[fd])
+			free(gnl_str[fd]);
 		return (NULL);
 	}
-	gnl_str = ft_read_all(fd, gnl_str);
-	if (!gnl_str)
+	gnl_str[fd] = ft_read_all(fd, gnl_str[fd]);
+	if (!gnl_str[fd])
 		return (NULL);
-	line = ft_get_line(gnl_str);
-	gnl_str = ft_save_line(gnl_str);
-	if (*gnl_str == '\0' && gnl_str)
-	 	free(gnl_str);
+	line = ft_get_line(gnl_str[fd]);
+	gnl_str[fd] = ft_save_line(gnl_str[fd]);
+	// if (*gnl_str[fd] == '\0' && gnl_str[fd])
+	//  	free(gnl_str[fd]);
 	return (line);
 }
