@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 20:13:14 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/08 21:11:46 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/07/08 21:24:20 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
