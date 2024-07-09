@@ -32,11 +32,12 @@ int main (int argc, char **argv)
 			printf("Caraculo!");
 			return (1);
 		}
-		while (i++ < counter)
+		while (i <= counter)
 		{
 			line = get_next_line(fd);
-			printf("%s\n", line);
+			printf("%s", line);
 			free(line);
+			i++;
 		}
 		close(fd);
 	}	

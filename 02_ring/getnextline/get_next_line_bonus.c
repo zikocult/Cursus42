@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 20:13:14 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/09 13:16:24 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/07/09 15:24:42 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,5 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = ft_get_line(gnl_str[fd]);
 	gnl_str[fd] = ft_save_line(gnl_str[fd]);
-	// if (*gnl_str[fd] == '\0' && gnl_str[fd])
-	//  	free(gnl_str[fd]);
 	return (line);
 }
