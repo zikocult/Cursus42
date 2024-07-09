@@ -6,12 +6,12 @@
 /*   By: gbaruls- <gbaruls->                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 10:19:22 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/07/09 12:20:29 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/07/09 16:02:19 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 
