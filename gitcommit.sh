@@ -1,6 +1,6 @@
 #!/bin/bash
 
 git add .
-read -p "Commit description: " desc
-git commit -m "$desc"
+read -p "Descripción del commit: " DESC
+git commit -m "$DESC"
 git push origin HEAD
