@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 20:13:14 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/09 15:46:15 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/07/09 19:37:57 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*gnl_str;
 
-	if (fd <= 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		if (gnl_str)
 			free(gnl_str);
