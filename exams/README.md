@@ -11,7 +11,7 @@ Only achieving 100% on this exams is considered passing.
 - Consisting of four questions with incremental difficulty and you have a limit of three hours to complete.
 - Here a table with my results in my enterily week practice, not evaluated in the real exam yet.
 
-<div align="center">
+<div align="left">
 
 |    Day     | exam 1 | exam 2  |
 |:----------:|:------:|:-------:|
