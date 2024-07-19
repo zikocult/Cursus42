@@ -1,0 +1,1 @@
+100%, creo que ha sido el mas sencillo que he hecho hasta ahora, sólo han sido tratamiento de string y no demasiado complejas, quizá me ha costado un poco mas el tercero que el último incluso.
