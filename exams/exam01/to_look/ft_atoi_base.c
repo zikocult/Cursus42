@@ -44,16 +44,17 @@ int ft_atoi_base(const char *str, int str_base) {
         sign = -1;
         i++;
     }
-
+	if (str[i] == '+')
+		i++;
     while (str[i]) {
         val = get_val(str[i]);
         if (val >= str_base || val == -1)
-            break;
+            return (result * sign);
         result = result * str_base + val;
 		i++;
     }
 
-    return result * sign;
+    return (result * sign);
 }
 
 int main() {
