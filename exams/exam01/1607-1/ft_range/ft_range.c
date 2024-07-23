@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls-@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 11:23:49 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/07/16 11:40:47 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/07/23 10:50:54 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int *ft_range(int start, int end)
 	}
 	return (range);
 }
-/*
+
 int main (void)
 {
 	int i = 0;
-	int start = 10;
+	int start = 0;
 	int end = 10;
 	int len;
 	int *range;
@@ -64,4 +64,4 @@ int main (void)
 	}
 	free(range);
 	return (0);
-}*/
+}
