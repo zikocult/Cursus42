@@ -4,8 +4,7 @@ I finished the first milestone in my way to complete the common core at [42 Barc
 - [Mandatory functions](#Mandatory)
 - [Bonus functions](#Bonus_Functions)
 - [Running and creating the library, the makefile rules](#Running)
-- Used technologies:
-	  	- C / Git / Makefile
+- Used technologies: **C / Git / Makefile**
 
 <div align="left">
   <a href = "mailto:gbarulls@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
