@@ -2,10 +2,19 @@
 
 - [Born2beroot](###Born2beroot)
 	- This project aims to introduce you to the wonderful world of virtualization and the linux servers
+  	- Linux and the virtualization comes together in this project, becoming a real Linux system administrator
+	- Used technologies:
+		- Debian / Rocky Linux / Bash / Vi / VirtualBox / KVM 
 - [PrintF](###PrintF)
 	- This project is pretty straightforward, you have to recode printf.
+ 	- Recoding the famous function PRINTF for my own.
+	- Used technologies:
+   		- C / Git / Makefile
 - [GetNextLine](###GetNexLine)
 	- May it be a file, stdin, or even later a network connection, you will always need a way to read content line by line.
+  	- Read from a file, and return one line, every execution.
+	- Used technologies:
+		- C / Git
 
 ### Born2beroot
 
