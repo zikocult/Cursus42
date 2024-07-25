@@ -1,4 +1,4 @@
-## Index
+## Milestone2 Index
 
 - [Born2beroot](###Born2beroot)
 	- This project aims to introduce you to the wonderful world of virtualization and the linux servers
