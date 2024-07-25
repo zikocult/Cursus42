@@ -1,3 +1,5 @@
 [**An extended explanation of this milestone**](https://github.com/zikocult/Cursus42/tree/main/02_ring)
 
-![[Born2beroot.png]]
+<p align="left">
+  <a href="https://github.com/zikocult/Cursus42/tree/main/02_ring"><img src="https://github.com/zikocult/Cursus42/blob/main/02_ring/docs/assets/Born2beroot/Born2beroot.png" /></a>
+</p>
