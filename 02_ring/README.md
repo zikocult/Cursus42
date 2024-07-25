@@ -1,14 +1,14 @@
 ## Milestone2 Index
 
-- [Born2beroot](###Born2beroot)
+- [Born2beroot](#Born2beroot)
   	- Linux and the virtualization comes together in this project, becoming a real Linux system administrator
 	- Used technologies:
 		- Debian / Rocky Linux / Bash / Vi / VirtualBox / KVM 
-- [PrintF](###PrintF)
+- [PrintF](#PrintF)
 	- This project is pretty straightforward, you have to recode printf.
 	- Used technologies:
    		- C / Git / Makefile
-- [GetNextLine](###GetNexLine)
+- [GetNextLine](#GetNexLine)
 	- May it be a file, stdin, or even later a network connection, you will always need a way to read content line by line.
 	- Used technologies:
 		- C / Git
