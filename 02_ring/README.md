@@ -72,8 +72,7 @@ wall "
   <a href="https://github.com/zikocult/Cursus42/tree/main/02_ring"><img src="https://github.com/zikocult/Cursus42/blob/main/02_ring/docs/assets/Born2beroot/script.png" /></a>
 </p>
 
-
-
+*Note*: I take the image in my own computer, because I needed the disk space of the virtual machine for my actual projects.
 
 **My opinion about the project 🖥️**
 
