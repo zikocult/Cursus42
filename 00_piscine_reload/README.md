@@ -3,8 +3,7 @@
 
 The Piscine Reloaded is a best-of of the exercises I did during the C Piscine to remind me all the basics of the C programming language and some system skills.
 
-Used technologies:
-	- C / Bash / Git / Makefile
+Used technologies: **C / Bash / Git / Makefile**
 
 <p align="left">
   <a href="https://github.com/zikocult/Cursus42/tree/main/00_piscine_reload"><img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/Reload/Result.png"/></a>
