@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 16:57:49 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/29 20:54:28 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/07/31 13:03:22 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	handle_input(int keysym, t_mlx_data *data)
 	}
 	printf("The %d key has been pressed\n", keysym);
 	sleep(1); // Esto es para apreciar el hook
+	(void) *data;
 	return (0);
 }
 
@@ -63,6 +64,7 @@ int	button_press(int button, int x, int y, t_mlx_data *data)
 	else if(button == 3)
 		printf("Has apretado el botón derecho en (%d , %d)\n", x, y);
 	sleep(1); // Esto es para apreciar el hook
+	(void) *data;
 	return (0);
 }
 

@@ -19,8 +19,9 @@ LIBFTINC	= libft/include
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 
-SRCS_FILES_INFO	=	$(shell find src -type f -iname "*.c" | sed 's#[.][^.]*$$##')
-SRCS_FILES	= src/test
+SRCS_FILES	=	$(shell find src -type f -iname "*.c" | sed 's#[.][^.]*$$##')
+# SRCS_FILES_INFO	=	$(shell find src -type f -iname "*.c" | sed 's#[.][^.]*$$##')
+# SRCS_FILES	= src/test
 
 SRCS 		= $(addsuffix .c, $(SRCS_FILES))
 SRCDIRS		= $(shell find src/ -type d)
@@ -30,6 +31,7 @@ OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror -I$(LIBFTINC) 
+CTEST		= -g
 CFLAGSMLX	= -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 AR			= ar rcs
 RANLIB		= ranlib
@@ -39,10 +41,10 @@ MKDIR		= mkdir -p
 all:		$(NAME)
 
 $(NAME):	$(MINILIBX) $(LIBFT) $(OBJSDIRS) $(OBJS) 
-			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(CFLAGSMLX) -o $(NAME)
+			$(CC) $(CTEST) $(CFLAGS) $(OBJS) $(LIBFT) $(CFLAGSMLX) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
-			$(CC) $(CFLAGS) -c $< $(CFLAGSMLX) -o $@
+			$(CC) $(CTEST) $(CFLAGS) -c $< $(CFLAGSMLX) -o $@
 
 $(OBJSDIRS) :
 	$(MKDIR) $(OBJSDIRS)
