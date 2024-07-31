@@ -14,6 +14,7 @@ NAME		= so_long
 LIBS		= include/so_long.h
 MINILIBX	= minilibx-linux/libmlx.a minilibx-linux/libmlx_Linux.a
 LIBFT		= libft/libft.a
+LIBFTINC	= libft/include
 
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/
@@ -28,7 +29,7 @@ OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror 
+CFLAGS		= -Wall -Wextra -Werror -I$(LIBFTINC) 
 CFLAGSMLX	= -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 AR			= ar rcs
 RANLIB		= ranlib
@@ -38,10 +39,10 @@ MKDIR		= mkdir -p
 all:		$(NAME)
 
 $(NAME):	$(MINILIBX) $(LIBFT) $(OBJSDIRS) $(OBJS) 
-			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(CFLAGSMLX) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
-			$(CC) $(CFLAGS) -c $< -o $@
+			$(CC) $(CFLAGS) -c $< $(CFLAGSMLX) -o $@
 
 $(OBJSDIRS) :
 	$(MKDIR) $(OBJSDIRS)
