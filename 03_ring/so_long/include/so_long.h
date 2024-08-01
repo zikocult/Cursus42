@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 17:26:44 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/31 22:32:11 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/01 14:24:23 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../libft/include/libft.h"
 # include "../libft/include/ft_printf.h"
 # include "../minilibx-linux/mlx.h"
+# include <X11/keysym.h>
 
 typedef struct s_mlx_data
 {

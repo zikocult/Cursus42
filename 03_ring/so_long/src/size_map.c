@@ -6,11 +6,12 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 14:36:21 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/31 21:16:04 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/01 12:04:03 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+#include <stdlib.h>
 
 void	errmap_ex(t_mlx_data *data)
 {
@@ -35,7 +36,7 @@ void	count_size(t_mlx_data *data)
 	i = 0;
 	while (data->map[i])
 	{
-		if (ft_strlen(data->map[i]) != data->lenght)
+		if (ft_strlen(data->map[i]) != (size_t)data->lenght)
 			errmap_ex(data);
 		i++;
 	}

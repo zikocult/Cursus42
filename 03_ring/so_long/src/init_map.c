@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_data_map.c                                    :+:      :+:    :+:   */
+/*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 11:46:15 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/31 14:31:04 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/01 14:31:34 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_count_file(char *file)
 	if (fd == -1)
 	{
 		ft_printf("Error\n");
-		return (-1);
+		 exit (1);
 	}
 	while (read(fd, &caracter, 1) == 1)
 		counter++;
