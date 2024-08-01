@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 10:35:25 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/01 15:59:29 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/08/01 20:22:48 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,29 @@ int	handle_input(int keysym, t_mlx_data *data)
 	else if (keysym == XK_w || keysym == XK_W)
 	{
 		mlx_clear_window(data->mlx_ptr, data->window);
-		mlx_string_put(data->mlx_ptr, data->window, 20, 20, 0xff0000, "Move UP!");
+		mlx_string_put(data->mlx_ptr, data->window, 150, 20, 0xff0000, "Move UP!");
 		ft_printf("Move UP!\n");
 
 	}
 	else if (keysym == XK_a || keysym == XK_A)
+	{
+		mlx_clear_window(data->mlx_ptr, data->window);
+		mlx_string_put(data->mlx_ptr, data->window, 20, 100, 0x0000ff, "Move LEFT!");
 		ft_printf("Move LEFT!\n");
+
+	}
 	else if (keysym == XK_s || keysym == XK_S)
+	{
+		mlx_clear_window(data->mlx_ptr, data->window);
+		mlx_string_put(data->mlx_ptr, data->window, 150, 150, 0x00ff00, "Move DOWN!");
 		ft_printf("Move DOWN!\n");
+	}
 	else if (keysym == XK_d || keysym == XK_D)
+	{
+		mlx_clear_window(data->mlx_ptr, data->window);
+		mlx_string_put(data->mlx_ptr, data->window, 250, 100, 0xffffff, "Move RIGHT!");
 		ft_printf("Move RIGHT!\n");
+	}
 	else
 		ft_printf("The %d key has been pressed\n", keysym);
 	(void) *data;

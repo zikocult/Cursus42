@@ -44,7 +44,7 @@ $(NAME):	$(MINILIBX) $(LIBFT) $(OBJSDIRS) $(OBJS)
 			$(CC) $(CTEST) $(CFLAGS) $(OBJS) $(LIBFT) $(CFLAGSMLX) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
-			$(CC) $(CTEST) $(CFLAGS) -c $< $(CFLAGSMLX) -o $@
+			$(CC) $(CFLAGS) -c $< $(CFLAGSMLX) -o $@
 
 $(OBJSDIRS) :
 	$(MKDIR) $(OBJSDIRS)
@@ -53,6 +53,10 @@ $(MINILIBX) :
 	make -C ./minilibx-linux/
 
 $(LIBFT) :
+	make -C ./libft/
+
+libs:
+	make -C ./minilibx-linux/
 	make -C ./libft/
 
 clean:
@@ -77,5 +81,5 @@ info:
 	$(info $(SRCS))
 	$(info $(OBJS))
 
-.PHONY:		all clean fclean re info normi
+.PHONY:		all clean fclean re info normi libs
 
