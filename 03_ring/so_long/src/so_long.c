@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 10:35:25 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/02 09:59:12 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/02 17:01:06 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,23 @@ void	close_all(t_mlx_data *data)
 	exit (1);
 }
 
+void first_image_test(t_mlx_data *data)
+{
+	void *test;
+	int num = 320;
+	// void	*mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
+	test = mlx_xpm_file_to_image(data->mlx_ptr, "./assets/Persona1.xpm", &num, &num);
+	// int mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr, int x, int y);
+	mlx_put_image_to_window(data->mlx_ptr, data->window, test, 300, 100);
+	// int		mlx_destroy_image(void *mlx_ptr, void *img_ptr);
+	mlx_destroy_image(data->mlx_ptr, test);
+}
+
 int	handle_input(int keysym, t_mlx_data *data)
 {
+	// mlx_clear_window(data->mlx_ptr, data->window);
+	// first_image_test(data);
+
 	if(keysym == XK_Escape)
 	{
 		ft_printf("BYE!\n", keysym);
@@ -31,33 +46,28 @@ int	handle_input(int keysym, t_mlx_data *data)
 	}
 	else if (keysym == XK_w || keysym == XK_W)
 	{
-		mlx_clear_window(data->mlx_ptr, data->window);
 		mlx_string_put(data->mlx_ptr, data->window, 150, 20, 0xff0000, "Move UP!");
 		ft_printf("Move UP!\n");
 
 	}
 	else if (keysym == XK_a || keysym == XK_A)
 	{
-		mlx_clear_window(data->mlx_ptr, data->window);
 		mlx_string_put(data->mlx_ptr, data->window, 20, 100, 0x0000ff, "Move LEFT!");
 		ft_printf("Move LEFT!\n");
 
 	}
 	else if (keysym == XK_s || keysym == XK_S)
 	{
-		mlx_clear_window(data->mlx_ptr, data->window);
 		mlx_string_put(data->mlx_ptr, data->window, 150, 150, 0x00ff00, "Move DOWN!");
 		ft_printf("Move DOWN!\n");
 	}
 	else if (keysym == XK_d || keysym == XK_D)
 	{
-		mlx_clear_window(data->mlx_ptr, data->window);
 		mlx_string_put(data->mlx_ptr, data->window, 250, 100, 0xffffff, "Move RIGHT!");
 		ft_printf("Move RIGHT!\n");
 	}
 	else
 		ft_printf("The %d key has been pressed\n", keysym);
-	(void) *data;
 	return (0);
 }
 
@@ -97,9 +107,10 @@ int	main(int argc, char **argv)
 		data.mlx_ptr = mlx_init();
 		if (!data.mlx_ptr)
 			errmap_ex(&data);	
-		data.window = mlx_new_window(data.mlx_ptr, data.lenght * 40, data.high * 40, "Patatona!");
+		data.window = mlx_new_window(data.mlx_ptr, data.lenght * 80, data.high * 80, "Patatona!");
 		if (!data.window)
 			close_all(&data);
+		first_image_test(&data);
 		mlx_key_hook(data.window, handle_input, &data);
 		mlx_loop(data.mlx_ptr);
 	}
