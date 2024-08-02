@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 10:35:25 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/02 17:01:06 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/08/02 21:14:44 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	close_all(t_mlx_data *data)
 void first_image_test(t_mlx_data *data)
 {
 	void *test;
-	int num = 320;
+	int num = PX;
 	// void	*mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
 	test = mlx_xpm_file_to_image(data->mlx_ptr, "./assets/Persona1.xpm", &num, &num);
 	// int mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr, int x, int y);
@@ -37,7 +37,7 @@ void first_image_test(t_mlx_data *data)
 int	handle_input(int keysym, t_mlx_data *data)
 {
 	// mlx_clear_window(data->mlx_ptr, data->window);
-	// first_image_test(data);
+	first_image_test(data);
 
 	if(keysym == XK_Escape)
 	{
@@ -107,7 +107,7 @@ int	main(int argc, char **argv)
 		data.mlx_ptr = mlx_init();
 		if (!data.mlx_ptr)
 			errmap_ex(&data);	
-		data.window = mlx_new_window(data.mlx_ptr, data.lenght * 80, data.high * 80, "Patatona!");
+		data.window = mlx_new_window(data.mlx_ptr, data.lenght * PX, data.high * PX, "Patatona!");
 		if (!data.window)
 			close_all(&data);
 		first_image_test(&data);
