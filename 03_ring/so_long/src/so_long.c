@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 10:35:25 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/01 20:22:48 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/02 09:59:12 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	main(int argc, char **argv)
 		data.mlx_ptr = mlx_init();
 		if (!data.mlx_ptr)
 			errmap_ex(&data);	
-		data.window = mlx_new_window(data.mlx_ptr, data.lenght * 32, data.high * 32, "Patatona!");
+		data.window = mlx_new_window(data.mlx_ptr, data.lenght * 40, data.high * 40, "Patatona!");
 		if (!data.window)
 			close_all(&data);
 		mlx_key_hook(data.window, handle_input, &data);
