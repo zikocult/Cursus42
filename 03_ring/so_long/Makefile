@@ -13,6 +13,7 @@
 NAME		= so_long
 LIBS		= include/so_long.h
 MINILIBX	= minilibx-linux/libmlx.a minilibx-linux/libmlx_Linux.a
+MINILIBXINC = ./minilibx-linux
 LIBFT		= libft/libft.a
 LIBFTINC	= libft/include
 
@@ -30,8 +31,7 @@ OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I$(LIBFTINC) 
-CTEST		= -g
+CFLAGS		= -Wall -Wextra -Werror -I$(LIBFTINC) -g
 CFLAGSMLX	= -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 AR			= ar rcs
 RANLIB		= ranlib
@@ -41,7 +41,7 @@ MKDIR		= mkdir -p
 all:		$(NAME)
 
 $(NAME):	$(MINILIBX) $(LIBFT) $(OBJSDIRS) $(OBJS) 
-			$(CC) $(CTEST) $(CFLAGS) $(OBJS) $(LIBFT) $(CFLAGSMLX) -o $(NAME)
+			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(CFLAGSMLX) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 			$(CC) $(CFLAGS) -c $< $(CFLAGSMLX) -o $@
@@ -49,11 +49,14 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 $(OBJSDIRS) :
 	$(MKDIR) $(OBJSDIRS)
 
-$(MINILIBX) :
+$(MINILIBX) : $(MINILIBXINC)
 	make -C ./minilibx-linux/
 
 $(LIBFT) :
 	make -C ./libft/
+
+$(MINILIBXINC) :
+	tar -xvzf minilibx-linux.tgz
 
 libs:
 	make -C ./minilibx-linux/
@@ -61,13 +64,14 @@ libs:
 
 clean:
 			$(RM) $(OBJS)
+			make clean -C ./minilibx-linux/
 			make clean -C ./libft/
 
 fclean:		clean
 			$(RM) $(OBJSDIRS)
 			$(RM) $(NAME)
+			rm -rf ./minilibx-linux/
 			make fclean -C ./libft/
-			make clean -C ./minilibx-linux/
 
 re:			fclean $(NAME)
 
