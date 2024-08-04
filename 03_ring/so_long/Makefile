@@ -50,35 +50,35 @@ $(OBJSDIRS) :
 	$(MKDIR) $(OBJSDIRS)
 
 $(MINILIBX) : $(MINILIBXINC)
-	make -C ./minilibx-linux/
+	make -C ./minilibx-linux
 
 $(LIBFT) :
-	make -C ./libft/
+	make -C ./libft
 
 $(MINILIBXINC) :
 	tar -xvzf minilibx-linux.tgz
 
-libs:
-	make -C ./minilibx-linux/
-	make -C ./libft/
+libs: $(MINILIBXINC)
+	make -C ./minilibx-linux
+	make -C ./libft
 
 clean:
 			$(RM) $(OBJS)
-			make clean -C ./minilibx-linux/
-			make clean -C ./libft/
+			make clean -C ./minilibx-linux
+			make clean -C ./libft
 
 fclean:		clean
 			$(RM) $(OBJSDIRS)
 			$(RM) $(NAME)
-			rm -rf ./minilibx-linux/
-			make fclean -C ./libft/
+			rm -rf ./minilibx-linux
+			make fclean -C ./libft
 
 re:			fclean $(NAME)
 
 normi:
 	@norminette $(SRCS)
 	@norminette $(LIBS)
-	@make normi -C ./libft/
+	@make normi -C ./libft
 
 info:
 	$(info $(SRCS_FILES_INFO))
