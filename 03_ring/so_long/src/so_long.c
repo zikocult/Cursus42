@@ -6,39 +6,14 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 10:35:25 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/02 21:14:44 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/07 18:45:14 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-
-void	close_all(t_mlx_data *data)
-{
-	free_map(data->map);
-	mlx_destroy_window(data->mlx_ptr, data->window);
-	mlx_destroy_display(data->mlx_ptr);
-	free(data->mlx_ptr);
-	exit (1);
-}
-
-void first_image_test(t_mlx_data *data)
-{
-	void *test;
-	int num = PX;
-	// void	*mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
-	test = mlx_xpm_file_to_image(data->mlx_ptr, "./assets/Persona1.xpm", &num, &num);
-	// int mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr, int x, int y);
-	mlx_put_image_to_window(data->mlx_ptr, data->window, test, 300, 100);
-	// int		mlx_destroy_image(void *mlx_ptr, void *img_ptr);
-	mlx_destroy_image(data->mlx_ptr, test);
-}
-
 int	handle_input(int keysym, t_mlx_data *data)
 {
-	// mlx_clear_window(data->mlx_ptr, data->window);
-	first_image_test(data);
-
 	if(keysym == XK_Escape)
 	{
 		ft_printf("BYE!\n", keysym);
@@ -82,8 +57,8 @@ int	test_name(char *str, char *map_ext)
 	{
 		if (str[len] != map_ext[i])
 		{
-			ft_printf("Error\n");
-			return (1);
+			ft_printf("Error name or extension\n");
+			exit (1);
 		}
 		len++;
 		i++;
@@ -97,8 +72,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		if (test_name(argv[1], ".ber") == 1)
-			return (1);
+		test_name(argv[1], ".ber");
 		data.map = ft_init_map(argv[1]);
 		if (!data.map)
 			return (1);
@@ -107,14 +81,15 @@ int	main(int argc, char **argv)
 		data.mlx_ptr = mlx_init();
 		if (!data.mlx_ptr)
 			errmap_ex(&data);	
-		data.window = mlx_new_window(data.mlx_ptr, data.lenght * PX, data.high * PX, "Patatona!");
+		data.window = mlx_new_window(data.mlx_ptr, data.lenght * PX, data.high * PX, "SO_LONG");
 		if (!data.window)
 			close_all(&data);
-		first_image_test(&data);
+		init_assets(&data);
+		init_screen(&data);
 		mlx_key_hook(data.window, handle_input, &data);
 		mlx_loop(data.mlx_ptr);
 	}
 	else
-		ft_printf("Error\n");
+		ft_printf("Error number arguments\n");
 	return (0);
 }

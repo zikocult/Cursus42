@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:07:10 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/31 22:43:41 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/07 14:59:16 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,60 +38,63 @@ void	check_wall(t_mlx_data *data)
 
 void	check_char(t_mlx_data *data)
 {
-	int	i;
-	int	j;
+	int	x;
+	int	y;
 
-	i = 0;
-	while (data->map[i])
+	y = 0;
+	while (data->map[y])
 	{
-		j = 0;
-		while (data->map[i][j])
+		x = 0;
+		while (data->map[y][x])
 		{
-			if (data->map[i][j] == 'P' || data->map[i][j] == 'E'
-				|| data->map[i][j] == '1' || data->map[i][j] == 'C'
-				|| data->map[i][j] == '0')
-				j++;
+			if (data->map[y][x] == 'P' || data->map[y][x] == 'E'
+				|| data->map[y][x] == '1' || data->map[y][x] == 'C'
+				|| data->map[y][x] == '0')
+				x++;
 			else
 				errmap_ex(data);
 		}
-		i++;
+		y++;
 	}
 }
 
 
 void	check_set(t_mlx_data *data)
 {
-	int	i;
-	int	j;
-	int	ex;
+	int	x;
+	int	y;
 
-	i = 0;
-	j = 0;
-	ex = 0;
-	while (data->map[j])
+	y = 0;
+	while (data->map[y])
 	{
-		i = 0;
-		while (data->map[j][i])
+		x = 0;
+		while (data->map[y][x])
 		{
-			if (data->map[j][i] == 'P')
-				data->player += 1;
-			else if (data->map[j][i] == 'E')
-				ex++;
-			else if (data->map[j][i] == 'C')
+			if (data->map[y][x] == 'P')
+			{
+				data->player.quantity += 1;
+				data->player.x = x;
+				data->player.y = y;
+			}
+			if (data->map[y][x] == 'E')
+				data->out += 1;
+			else if (data->map[y][x] == 'C')
 				data->collect += 1;
-			i++;
+			x++;
 		}
-		j++;
+		y++;
 	}
-	if (data->collect == 0 || data->player == 0
-		|| ex == 0 || data->player > 1)
+	if (data->collect == 0 || data->player.quantity != 1
+		|| data->out != 1)
 		errmap_ex(data);
 }
 
 void	check_content(t_mlx_data *data)
 {
-	data->player = 0;
+	data->player.quantity = 0;
+	data->player.picture = 0;
 	data->collect = 0;
+	data->out = 0;
 	check_wall(data);
 	check_char(data);
 	check_set(data);

@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 11:46:15 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/01 14:31:34 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/08/07 12:20:55 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_count_file(char *file)
 	if (fd == -1)
 	{
 		ft_printf("Error\n");
-		 exit (1);
+		exit (1);
 	}
 	while (read(fd, &caracter, 1) == 1)
 		counter++;
@@ -70,14 +70,24 @@ char	**ft_init_map(char *file)
 	return (map);
 }
 
-void	free_map(char **map)
+void	count_size(t_mlx_data *data)
 {
 	int	i;
 
 	i = 0;
-	while (map[i])
+	data->lenght = ft_strlen(data->map[i]);
+	while (data->map[i])
 		i++;
-	while (i--)
-		free(map[i]);
-	free(map);
+	data->high = i;
+	if (data->high == 0 || data->lenght == 0)
+		errmap_ex(data);
+	if (data->high == data->lenght)
+		errmap_ex(data);
+	i = 0;
+	while (data->map[i])
+	{
+		if (ft_strlen(data->map[i]) != (size_t)data->lenght)
+			errmap_ex(data);
+		i++;
+	}
 }
