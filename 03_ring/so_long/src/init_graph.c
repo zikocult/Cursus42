@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 13:05:12 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/08 19:20:51 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/08 21:45:23 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,15 @@ void	draw_map_to_screen(t_mlx_data *data, int y, int x)
 	else if (data->map[y][x] == 'C')
 		mlx_put_image_to_window(data->mlx_ptr,
 			data->window, data->assets->collect, x * PX, y * PX);
-	else if (data->map[y][x] == 'E')
+	else if (data->map[y][x] == 'E' && data->collect > 0)
 		mlx_put_image_to_window(data->mlx_ptr,
 			data->window, data->assets->close, x * PX, y * PX);
+	else if (data->map[y][x] == 'E' && data->collect <= 0)
+		mlx_put_image_to_window(data->mlx_ptr,
+			data->window, data->assets->open, x * PX, y * PX);
 	else if (data->map[y][x] == 'P')
 		mlx_put_image_to_window(data->mlx_ptr,
 			data->window, data->assets->player1, x * PX, y * PX);
-	else if (data->map[y][x] == 'S')
-		mlx_put_image_to_window(data->mlx_ptr,
-			data->window, data->assets->open, x * PX, y * PX);
 }
 
 int	init_screen(t_mlx_data *data)
