@@ -6,11 +6,31 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:07:10 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/07 14:59:16 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/08 19:39:27 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+int	test_name(char *str, char *map_ext)
+{
+	int		len;
+	int		i;
+
+	len = ft_strlen(str) - 4;
+	i = 0;
+	while (str[len])
+	{
+		if (str[len] != map_ext[i])
+		{
+			ft_printf("Error name or extension\n");
+			exit (1);
+		}
+		len++;
+		i++;
+	}
+	return (0);
+}
 
 void	check_wall(t_mlx_data *data)
 {
@@ -33,15 +53,11 @@ void	check_wall(t_mlx_data *data)
 		i++;
 	}
 	if (err > 0)
-		errmap_ex(data);	
+		errmap_ex(data);
 }
 
-void	check_char(t_mlx_data *data)
+void	check_char(t_mlx_data *data, int y, int x)
 {
-	int	x;
-	int	y;
-
-	y = 0;
 	while (data->map[y])
 	{
 		x = 0;
@@ -58,13 +74,8 @@ void	check_char(t_mlx_data *data)
 	}
 }
 
-
-void	check_set(t_mlx_data *data)
+void	check_set(t_mlx_data *data, int y, int x)
 {
-	int	x;
-	int	y;
-
-	y = 0;
 	while (data->map[y])
 	{
 		x = 0;
@@ -91,11 +102,18 @@ void	check_set(t_mlx_data *data)
 
 void	check_content(t_mlx_data *data)
 {
+	int	y;
+	int	x;
+
+	y = 0;
+	x = 0;
 	data->player.quantity = 0;
 	data->player.picture = 0;
 	data->collect = 0;
 	data->out = 0;
+	data->moves = 0;
+	count_size(data);
 	check_wall(data);
-	check_char(data);
-	check_set(data);
+	check_char(data, y, x);
+	check_set(data, y, x);
 }

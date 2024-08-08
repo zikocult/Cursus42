@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 12:10:35 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/07 18:44:16 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/08 19:31:56 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,19 @@ void	errmap_ex(t_mlx_data *data)
 	ft_printf("Error map\n");
 	exit(1);
 }
+
 void	free_assets(t_mlx_data *data)
 {
-	mlx_destroy_image(data->mlx_ptr, data->assets.background);
-	mlx_destroy_image(data->mlx_ptr, data->assets.wall);
-	mlx_destroy_image(data->mlx_ptr, data->assets.collect);
-	mlx_destroy_image(data->mlx_ptr, data->assets.open);
-	mlx_destroy_image(data->mlx_ptr, data->assets.close);
-	mlx_destroy_image(data->mlx_ptr, data->assets.enemy);
-	mlx_destroy_image(data->mlx_ptr, data->assets.player1);
-	mlx_destroy_image(data->mlx_ptr, data->assets.player2);
-	mlx_destroy_image(data->mlx_ptr, data->assets.player3);
-	mlx_destroy_image(data->mlx_ptr, data->assets.player4);
+	mlx_destroy_image(data->mlx_ptr, data->assets->background);
+	mlx_destroy_image(data->mlx_ptr, data->assets->wall);
+	mlx_destroy_image(data->mlx_ptr, data->assets->collect);
+	mlx_destroy_image(data->mlx_ptr, data->assets->open);
+	mlx_destroy_image(data->mlx_ptr, data->assets->close);
+	mlx_destroy_image(data->mlx_ptr, data->assets->player1);
+	free(data->assets);
 }
 
-void	close_all(t_mlx_data *data)
+int	close_all(t_mlx_data *data)
 {
 	free_assets(data);
 	free_map(data->map);
@@ -41,6 +39,7 @@ void	close_all(t_mlx_data *data)
 	mlx_destroy_display(data->mlx_ptr);
 	free(data->mlx_ptr);
 	exit (1);
+	return (0);
 }
 
 void	free_map(char **map)
