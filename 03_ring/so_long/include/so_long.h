@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 17:26:44 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/08 19:49:28 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/08/09 13:35:13 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@
 # define OPEN_EXIT "./assets/open.xpm"
 # define CLOSE_EXIT "./assets/closed.xpm"
 # define BACKGROUND "./assets/back.xpm"
+# define ENEMY  "./assets/enemy.xpm"
 # define PLAYER1 "./assets/Persona1.xpm"
+# define PLAYER2 "./assets/Persona2.xpm"
+# define PLAYER3 "./assets/Persona3.xpm"
+# define PLAYER4 "./assets/Persona4.xpm"
 
 typedef struct s_assets
 {
@@ -33,7 +37,11 @@ typedef struct s_assets
 	void	*open;
 	void	*close;
 	void	*background;
+	void	*enemy;
 	void	*player1;
+	void	*player2;
+	void	*player3;
+	void	*player4;
 }	t_assets;
 
 typedef struct s_player
@@ -70,5 +78,7 @@ void	check_content(t_mlx_data *data);
 void	init_assets(t_mlx_data *data);
 int		init_screen(t_mlx_data *data);
 void	player_move(t_mlx_data *data, int y, int x);
+void	check_path(t_mlx_data *data, int y, int x);
+
 
 #endif

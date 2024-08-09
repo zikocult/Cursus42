@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:07:10 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/08 19:39:27 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/09 13:35:15 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	check_char(t_mlx_data *data, int y, int x)
 		{
 			if (data->map[y][x] == 'P' || data->map[y][x] == 'E'
 				|| data->map[y][x] == '1' || data->map[y][x] == 'C'
-				|| data->map[y][x] == '0')
+				|| data->map[y][x] == '0' || data->map[y][x] == 'X')
 				x++;
 			else
 				errmap_ex(data);
@@ -116,4 +116,5 @@ void	check_content(t_mlx_data *data)
 	check_wall(data);
 	check_char(data, y, x);
 	check_set(data, y, x);
+	check_path(data, y, x);
 }

@@ -1,0 +1,74 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/30 17:26:44 by Guillem Barulls   #+#    #+#             */
+/*   Updated: 2024/08/08 19:49:28 by gbaruls-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SO_LONG_H
+# define SO_LONG_H
+
+# include "../libft/include/libft.h"
+# include "../libft/include/ft_printf.h"
+# include "../minilibx-linux/mlx.h"
+# include <X11/keysym.h>
+
+# define PX 50
+# define WALL "./assets/muro1.xpm"
+# define COLLECT "./assets/colection.xpm"
+# define OPEN_EXIT "./assets/open.xpm"
+# define CLOSE_EXIT "./assets/closed.xpm"
+# define BACKGROUND "./assets/back.xpm"
+# define PLAYER1 "./assets/Persona1.xpm"
+
+typedef struct s_assets
+{
+	void	*wall;
+	void	*collect;
+	void	*open;
+	void	*close;
+	void	*background;
+	void	*player1;
+}	t_assets;
+
+typedef struct s_player
+{
+	int	quantity;
+	int	x;
+	int	y;
+	int	picture;
+}	t_player;
+
+typedef struct s_mlx_data
+{
+	void		*mlx_ptr;
+	void		*window;
+	char		**map;
+	int			high;
+	int			lenght;
+	int			collect;
+	int			moves;
+	int			out;
+	t_player	player;
+	t_assets	*assets;
+}	t_mlx_data;
+
+int		ft_count_file(char *file);
+char	**ft_init_map(char *file);
+void	count_size(t_mlx_data *data);
+int		test_name(char *str, char *map_ext);
+void	free_map(char **map);
+int		close_all(t_mlx_data *data);
+void	errmap_ex(t_mlx_data *data);
+void	content_review(t_mlx_data *data);
+void	check_content(t_mlx_data *data);
+void	init_assets(t_mlx_data *data);
+int		init_screen(t_mlx_data *data);
+void	player_move(t_mlx_data *data, int y, int x);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 12:10:35 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/08 19:31:56 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/09 12:23:25 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ void	free_assets(t_mlx_data *data)
 	mlx_destroy_image(data->mlx_ptr, data->assets->collect);
 	mlx_destroy_image(data->mlx_ptr, data->assets->open);
 	mlx_destroy_image(data->mlx_ptr, data->assets->close);
+	mlx_destroy_image(data->mlx_ptr, data->assets->enemy);
 	mlx_destroy_image(data->mlx_ptr, data->assets->player1);
+	mlx_destroy_image(data->mlx_ptr, data->assets->player2);
+	mlx_destroy_image(data->mlx_ptr, data->assets->player3);
+	mlx_destroy_image(data->mlx_ptr, data->assets->player4);
 	free(data->assets);
 }
 
