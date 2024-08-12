@@ -17,12 +17,11 @@ MINILIBXINC = ./minilibx-linux
 LIBFT		= libft/libft.a
 LIBFTINC	= libft/include
 
-SRC_DIR		=	src/
-OBJ_DIR		=	obj/
+SRC_DIR		= src/
+OBJ_DIR		= obj/
 
-SRCS_FILES	=	$(shell find src -type f -iname "*.c" | sed 's#[.][^.]*$$##')
-# SRCS_FILES_INFO	=	$(shell find src -type f -iname "*.c" | sed 's#[.][^.]*$$##')
-# SRCS_FILES	= src/test
+SRCS_FILES	= src/init_graph src/init_map src/move src/so_long src/check_path \
+			  src/frees src/check_map
 
 SRCS 		= $(addsuffix .c, $(SRCS_FILES))
 SRCDIRS		= $(shell find src/ -type d)
@@ -31,12 +30,14 @@ OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I$(LIBFTINC) -g
+CFLAGS		= -Wall -Wextra -Werror -I$(LIBFTINC)
 CFLAGSMLX	= -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 AR			= ar rcs
 RANLIB		= ranlib
 RM			= rm -rf
+TAR			= tar -xvzf
 MKDIR		= mkdir -p
+NORM		= @norminette
 
 all:		$(NAME)
 
@@ -47,20 +48,24 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 			$(CC) $(CFLAGS) -c $< $(CFLAGSMLX) -o $@
 
 $(OBJSDIRS) :
-	$(MKDIR) $(OBJSDIRS)
+			$(MKDIR) $(OBJSDIRS)
 
 $(MINILIBX) : $(MINILIBXINC)
-	make -C ./minilibx-linux
+			make -C $(MINILIBXINC)
 
 $(LIBFT) :
-	make -C ./libft
+			make -C ./libft
 
 $(MINILIBXINC) :
-	tar -xvzf minilibx-linux.tgz
+			$(TAR) minilibx-linux.tgz
+			$(RM) $(MINILIBXINC)/.git/
+			$(RM) $(MINILIBXINC)/.github/
+			$(RM) $(MINILIBXINC)/man/
+			$(RM) $(MINILIBXINC)/.gitignore
 
 libs: $(MINILIBXINC)
-	make -C ./minilibx-linux
-	make -C ./libft
+			make -C $(MINILIBXINC)
+			make -C ./libft
 
 clean:
 			$(RM) $(OBJS)
@@ -70,20 +75,18 @@ clean:
 fclean:		
 			$(RM) $(OBJSDIRS)
 			$(RM) $(NAME)
-			rm -rf ./minilibx-linux
+			$(RM) ./minilibx-linux
 			make fclean -C ./libft
 
 re:			fclean $(NAME)
 
 normi:
-	@norminette $(SRCS)
-	@norminette $(LIBS)
-	@make normi -C ./libft
+			$(NORM) $(SRCS)
+			$(NORM) $(LIBS)
+			@make normi -C ./libft
 
 info:
-	$(info $(SRCS_FILES_INFO))
-	$(info $(SRCS))
-	$(info $(OBJS))
+			$(info $(SRCS_FILES))
 
 .PHONY:		all clean fclean re info normi libs
 
