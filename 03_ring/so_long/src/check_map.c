@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:07:10 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/09 13:35:15 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/08/12 12:14:09 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	test_name(char *str, char *map_ext)
 	{
 		if (str[len] != map_ext[i])
 		{
-			ft_printf("Error name or extension\n");
+			ft_printf("Error extension del mapa\n");
 			exit (1);
 		}
 		len++;
@@ -53,7 +53,10 @@ void	check_wall(t_mlx_data *data)
 		i++;
 	}
 	if (err > 0)
+	{
+		ft_printf("Los muros no rodean el mapa!\n");
 		errmap_ex(data);
+	}
 }
 
 void	check_char(t_mlx_data *data, int y, int x)
@@ -68,7 +71,10 @@ void	check_char(t_mlx_data *data, int y, int x)
 				|| data->map[y][x] == '0' || data->map[y][x] == 'X')
 				x++;
 			else
+			{
+				ft_printf("Carácteres inválidos dentro del mapa!\n");
 				errmap_ex(data);
+			}
 		}
 		y++;
 	}
@@ -97,7 +103,10 @@ void	check_set(t_mlx_data *data, int y, int x)
 	}
 	if (data->collect == 0 || data->player.quantity != 1
 		|| data->out != 1)
+	{
+		ft_printf("Fallo en el set de objetos necesarios\n");
 		errmap_ex(data);
+	}
 }
 
 void	check_content(t_mlx_data *data)
@@ -116,5 +125,9 @@ void	check_content(t_mlx_data *data)
 	check_wall(data);
 	check_char(data, y, x);
 	check_set(data, y, x);
-	check_path(data, y, x);
+	if (check_path(data))
+	{
+		ft_printf("Error para encontrar un camino real\n");
+		errmap_ex(data);
+	}
 }

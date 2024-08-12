@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 12:10:35 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/09 12:23:25 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/08/12 12:10:35 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 void	errmap_ex(t_mlx_data *data)
 {
 	free_map(data->map);
-	ft_printf("Error map\n");
 	exit(1);
 }
 

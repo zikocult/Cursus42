@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 17:26:44 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/09 13:35:13 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/08/12 12:05:31 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,13 @@ typedef struct s_mlx_data
 	t_assets	*assets;
 }	t_mlx_data;
 
+typedef struct s_aux_map
+{
+	char	**map;
+	int		count_e;
+	int		count_c;
+}	t_aux_map;
+
 int		ft_count_file(char *file);
 char	**ft_init_map(char *file);
 void	count_size(t_mlx_data *data);
@@ -78,7 +85,6 @@ void	check_content(t_mlx_data *data);
 void	init_assets(t_mlx_data *data);
 int		init_screen(t_mlx_data *data);
 void	player_move(t_mlx_data *data, int y, int x);
-void	check_path(t_mlx_data *data, int y, int x);
-
+int		check_path(t_mlx_data *data);
 
 #endif
