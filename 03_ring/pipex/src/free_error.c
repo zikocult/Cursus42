@@ -6,12 +6,24 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 10:30:31 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/19 13:06:14 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/19 20:04:44 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
-#include <unistd.h>
+
+void	error_fork(t_pipe *data)
+{
+	clean_exit(data);
+	exit (1);
+}
+
+void	error_args(void)
+{
+	ft_printf("Wrong number of arguments\n");
+	ft_printf("Example: ./pipex <file1> <cmd1> <cmd2> <file2>\n");
+	exit (1);
+}
 
 void	free_pointer(char **pointer)
 {
@@ -28,13 +40,6 @@ void	free_pointer(char **pointer)
 	free(pointer);
 }
 
-void	error_args(void)
-{
-	ft_printf("Wrong number of arguments\n");
-	ft_printf("Example: ./pipex <file1> <cmd1> <cmd2> <file2>\n");
-	exit (1);
-}
-
 void	clean_exit(t_pipe *data)
 {
 	free_pointer(data->cmd);
@@ -43,10 +48,6 @@ void	clean_exit(t_pipe *data)
 	if (data->infile >= 0)
 		close(data->infile);
 	if (data->outfile >= 0)
-	{
-		if (unlink(data->files[1]) != 0)
-			ft_printf("Error al borrar fichero\n");
 		close(data->outfile);
-	}
 	free_pointer(data->files);
 }

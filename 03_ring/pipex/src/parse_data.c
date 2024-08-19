@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 10:28:28 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/19 13:01:26 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/19 18:52:26 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,6 @@ void	init_files(int argc, char **argv, t_pipe *data)
 	data->files[1] = ft_strdup(argv[argc - 1]);
 	data->infile = -1;
 	data->outfile = -1;
-}
-
-void	fill_data2(t_pipe *data, int pos, char *argv, int i)
-{
-	int	j;
-	int	k;
-
-	j = i;
-	while (argv[i])
-		i++;
-	if (i == j)
-	{
-		data->param[pos] = (char *)ft_calloc(1, sizeof(char *));
-		return ;
-	}
-	data->param[pos] = (char *)ft_calloc(i - j + 1, sizeof(char *));
-	if (!data->param[pos])
-		exit (1);
-	k = 0;
-	while (argv[j])
-	{
-		data->param[pos][k] = argv[j];
-		k++;
-		j++;
-	}
 }
 
 void	fill_data(t_pipe *data, int pos, char *argv)
@@ -65,9 +40,9 @@ void	fill_data(t_pipe *data, int pos, char *argv)
 		data->cmd[pos][j] = argv[j];
 		j++;
 	}
-	while ((argv[i] == ' ' && (argv[i] <= 9 || argv[i] >= 13)) && argv[i])
-		i++;
-	fill_data2(data, pos, argv, i);
+	data->param[pos] = ft_strdup(argv);
+	if (!data->param[pos])
+		exit (1);
 }
 
 void	init_cmd(int argc, char **argv, t_pipe *data)

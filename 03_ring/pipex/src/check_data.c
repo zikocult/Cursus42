@@ -6,31 +6,11 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 11:15:51 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/19 13:07:37 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/19 20:05:03 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
-#include <fcntl.h>
-#include <unistd.h>
-
-void	check_files(t_pipe *data)
-{
-	data->infile = open(data->files[0], O_RDONLY);
-	if (data->infile < 0)
-	{
-		clean_exit(data);
-		ft_printf("Infile error\n");
-		exit (1);
-	}
-	data->outfile = open(data->files[1], O_TRUNC | O_CREAT | O_RDWR, 0000644);
-	if (data->outfile < 0)
-	{
-		clean_exit(data);
-		ft_printf("outfile error\n");
-		exit(1);
-	}
-}
 
 int	check_cmds2(t_pipe *data, int i)
 {
