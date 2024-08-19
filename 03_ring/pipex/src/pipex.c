@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls->                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 10:02:35 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/08/19 20:05:56 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/19 20:22:40 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	parent(t_pipe *data, int *fd, char **env)
 	}
 	dup2(data->outfile, 1);
 	dup2(fd[0], 0);
+	close(fd[0]);
 	close(fd[1]);
 	execve(data->cmd[1], param, env);
 	free_pointer(param);
@@ -50,6 +51,7 @@ void	child(t_pipe *data, int *fd, char **env)
 	dup2(data->infile, 0);
 	dup2(fd[1], 1);
 	close(fd[0]);
+	close(fd[1]);
 	execve(data->cmd[0], param, env);
 	free_pointer(param);
 }
@@ -74,6 +76,8 @@ int	main(int argc, char **argv, char **env)
 			child(&data, fd, env);
 		waitpid(data.pid, NULL, 0);
 		parent(&data, fd, env);
+		close (fd[0]);
+		close (fd[1]);
 		clean_exit(&data);
 	}
 	else
