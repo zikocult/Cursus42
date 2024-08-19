@@ -6,52 +6,35 @@
 /*   By: gbaruls- <gbaruls->                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 10:02:35 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/08/16 13:38:27 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/08/19 13:07:11 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
 
-void	init_pipex(char *argv, char **env, t_pipe *data)
-{
-	int	i;
-
-	i = 0;
-	while (!ft_strnstr(env[i], "PATH=", 5))
-		i++;
-	data->paths = ft_split(env[i] + 5, ':');
-	i = 0;
-	while (data->paths[i])
-	{
-		data->paths[i] = ft_strjoin(data->paths[i], "/");
-		i++;
-	}
-	if (argv)
-		data->cmd1 = ft_strdup("patata");
-}
+	// ft_printf("%s\n", data.cmd[0]);
+	// ft_printf("%s\n", data.cmd[1]);
+	// ft_printf("%s\n", data.param[0]);
+	// ft_printf("%s\n", data.param[1]);
+	// ft_printf("%s\n", data.files[0]);
+	// ft_printf("%s\n", data.files[1]);
+	// ft_printf("%i\n", data.infile);
+	// ft_printf("%i\n", data.outfile);
 
 int	main(int argc, char **argv, char **env)
 {
 	t_pipe	data;
-	int		i;
 
-	if (argc != 5)
-	{ 
-		ft_printf("Wrong number of arguments\n");
-		ft_printf("Example: ./pipex <file1> <cmd1> <cmd2> <file2>\n");
-		exit (1);
+	if (argc == 5 && argv)
+	{
+		init_path(env, &data);
+		init_cmd(argc - 2, argv, &data);
+		init_files(argc, argv, &data);
+		check_files(&data);
+		check_cmds(&data, argc - 3);
+		clean_exit(&data);
 	}
 	else
-	{
-		i = 1;
-
-		while (i++ <= 2)
-			init_pipex(argv[i], env, &data);
-		i = 0;
-		while (data.paths[i])
-		{
-			ft_printf("Path[%i] - %s\n", i, data.paths[i]);
-			i++;
-		}
-	}
+		error_args();
+	return (0);
 }
