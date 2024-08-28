@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:11:46 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/26 22:17:58 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/28 12:45:42 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,26 @@ int	main(int argc, char **argv)
 {
 	t_push		data;
 
-	if (argc < 2)
+	if (argc < 2 || (argc == 2 && !argv[1][0]))
 		printerror(1);
 	else if (argc > 2)
 		init_data_argc(argc, argv, &data);
 	else if (argc == 2)
 		init_data_argv(argv[1], &data);
 	init_list(&data);
+	// Desde aquí están mis tests
+	// test(&data, argc);
+	//Hasta aquí, todo esto se debe borrar
+	if (!sorted_list(data.a_head))
+	{
+		if (data.count == 2)
+			sa(&data);
+		else if (data.count == 3)
+			sortofthree(&data.a_head, &data);
+		else
+			push_swap(&data);
+	}
+	// mostrar_lista(&data);
 	clean_exit(&data);
 	return (0);
 }
-	// Desde aquí están mis tests
-	// int i = 0;
-	// ft_printf("ARGC == %d\n", argc);
-	// while (data.input[i])
-	// {
-	// 	ft_printf("[%d]: %s\n", i, data.input[i]);
-	// 	i++;
-	// }
-	// ft_printf("\n-------Mostrando la lista--------\n");
-	// t_content	*curr = data.a_tail;
-	// i = 0;
-	// while (curr != NULL)
-	// {
-	// 	ft_printf("[%d]: %d\n", i, curr->value);
-	// 	curr = curr->next;
-	// 	i++;
-	// }
-	//Hasta aquí, todo esto se debe borrar
