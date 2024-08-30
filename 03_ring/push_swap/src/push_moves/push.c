@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:41:53 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/27 19:39:11 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/29 11:43:55 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ static void	push(t_content **dest, t_content **src)
 	}
 }
 
-void	pa(t_push *data)
+void		pa(t_push *data)
 {
 	push(&data->a_head, &data->b_head);
-	ft_printf("pa\n");
+	ft_putstr_fd("pa\n", 1);
 }
 
 void	pb(t_push *data)
 {
 	push(&data->b_head, &data->a_head);
-	ft_printf("pb\n");
+	ft_putstr_fd("pb\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 17:59:49 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/28 15:32:03 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/29 11:41:22 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_content
 typedef struct s_push
 {
 	char		**input;
-	int			count;
 	t_content	*a_head;
 	t_content	*b_head;
 	t_content	*a_tail;
@@ -43,6 +42,7 @@ typedef struct s_push
 //Recordar borrar el test
 void		test(t_push *data, int argc);
 void		mostrar_lista(t_push *data);
+void		muestra_struct(t_content *head);
 
 //Initialitzation and checks
 void		init_data_argv(char *argv, t_push *data);

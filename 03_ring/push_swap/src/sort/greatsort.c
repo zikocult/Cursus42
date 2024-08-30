@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 22:52:37 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/28 15:44:46 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/29 12:39:30 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ void	push_swap(t_push *data)
 	while (data->b_head)
 	{
 		init_nodes(data->a_head, data->b_head);
+		// mostrar_lista(data);
+		// muestra_struct(data->b_head);
 		move_nodes(&data->a_head, &data->b_head, data);
 	}
 	set_position(data->a_head);

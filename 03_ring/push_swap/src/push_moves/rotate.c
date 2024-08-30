@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:50:20 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/27 20:44:31 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/29 11:19:20 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ static void	rotate(t_content **head)
 void	ra(t_push *data)
 {
 	rotate(&data->a_head);
-	ft_printf("ra\n");
+	ft_putstr_fd("ra\n", 1);
 }
 
 void	rb(t_push *data)
 {
 	rotate(&data->b_head);
-	ft_printf("rb\n");
+	ft_putstr_fd("rb\n", 1);
 }
 
 void	rr(t_push *data)
 {
 	rotate(&data->a_head);
 	rotate(&data->b_head);
-	ft_printf("rr\n");
+	ft_putstr_fd("rr\n", 1);
 }

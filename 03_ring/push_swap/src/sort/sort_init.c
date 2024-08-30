@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 23:40:10 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/28 15:34:10 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/29 13:39:12 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,46 @@ void	set_price(t_content *head_a, t_content *head_b)
 
 	len_a = list_len(head_a);
 	len_b = list_len(head_b);
+	curr = head_a;
+	while (curr)
+	{
+		curr->price = curr->position;
+		if(!(curr->under_median))
+			curr->price = len_a - (curr->position);
+		curr = curr->next;
+	}
 	curr = head_b;
 	while (curr)
 	{
 		curr->price = curr->position;
 		if(!(curr->under_median))
 			curr->price = len_b - (curr->position);
-		if(curr->target->under_median)
-			curr->price += curr->target->position;
-		else
-			curr->price += len_a - (curr->target->position);
+		curr->price += curr->target->price;
 		curr = curr->next;
 	}
 }
+
+// void	set_price(t_content *head_a, t_content *head_b)
+// {
+// 	int			len_a;
+// 	int			len_b;
+// 	t_content	*curr;
+//
+// 	len_a = list_len(head_a);
+// 	len_b = list_len(head_b);
+// 	curr = head_b;
+// 	while (curr)
+// 	{
+// 		curr->price = curr->position;
+// 		if(!(curr->under_median))
+// 			curr->price = len_b - (curr->position);
+// 		if(curr->target->under_median)
+// 			curr->price += curr->target->position;
+// 		else
+// 			curr->price += len_a - (curr->target->position);
+// 		curr = curr->next;
+// 	}
+// }
 
 void	set_best(t_content *head)
 {
