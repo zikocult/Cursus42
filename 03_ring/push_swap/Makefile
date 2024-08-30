@@ -11,6 +11,9 @@
 # **************************************************************************** #
 
 NAME		= push_swap 
+BONUS		= checker
+BONUS_DIR	= bonus/
+LIBRARY		= include/push_swap.a
 LIBS		= include/push_swap.h
 LIBFT		= libft/libft.a
 LIBFTINC	= libft/include
@@ -31,10 +34,11 @@ CFLAGS		= -Wall -Wextra -Werror -I$(LIBFTINC) -g
 RM			= @rm -rf
 MKDIR		= @mkdir -p
 NORM		= @norminette
+MAKE_LIB	= ar -rcs
 
 all:		$(NAME)
 
-$(NAME):	$(LIBFT) $(OBJSDIRS) $(OBJS) Makefile
+$(NAME):	$(LIBFT) $(OBJSDIRS) $(OBJS) $(LIBRARY) Makefile
 			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
@@ -46,17 +50,28 @@ $(OBJSDIRS) :
 $(LIBFT) :	
 			make -C ./libft
 
+$(LIBRARY) : $(OBJS)
+			$(MAKE_LIB) $(LIBRARY) $^
+
+bonus:		$(BONUS)
+
+$(BONUS)	:
+			make -C ./bonus
+
 lib :		
 			make -C ./libft
 
 clean:
 			$(RM) $(OBJS)
 			make clean -C ./libft
+			make clean -C ./bonus
 
 fclean:		
 			$(RM) $(OBJSDIRS)
+			$(RM) $(LIBRARY)
 			$(RM) $(NAME)
 			make fclean -C ./libft
+			make fclean -C ./bonus
 
 re:			fclean $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:30:55 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/29 11:11:30 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/30 18:22:08 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 static void	init_heads(t_push *data)
 {
-	int	i;
-
-	i = 0;
-	while (data->input[i])
-		i++;
 	data->a_head = NULL;
 	data->b_head = NULL;
 	data->a_tail = NULL;
