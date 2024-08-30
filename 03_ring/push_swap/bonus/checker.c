@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/30 18:21:17 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/30 18:40:12 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	main(int argc, char **argv)
 	int			len;
 	
 	if (argc < 2 || (argc == 2 && !argv[1][0]))
-		ft_putstr_fd("KO\n", 2);
+		return (1);
 	else if (argc > 2)
 		init_data_argc(argc, argv, &data);
 	else if (argc == 2)
