@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:27:23 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/29 09:57:29 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/30 10:09:39 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	printerror(int error)
 	if (error == 3)
 		ft_putstr_fd("Error: Duplicated values\n", 2);
 	if (error == 4)
-		ft_putstr_fd("Error: No numeric parameter included in the arguments\n", 2);
+		ft_putstr_fd("Error: No numeric argument\n", 2);
 	if (error == 5)
 		ft_putstr_fd("Error: Number exceed the integers limit\n", 2);
 	exit (error);

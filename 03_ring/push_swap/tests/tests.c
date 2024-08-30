@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 09:22:02 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/29 11:42:37 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/30 09:50:53 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	muestra_struct(t_content *head)
 		ft_printf("Position : %d\n", curr->position);
 		ft_printf("Price : %d\n", curr->price);
 		ft_printf("Under median : %d\n", curr->under_median);
-		ft_printf("Best : %d\n", curr->best);
+		ft_printf("Best : %d\n", curr->best_move);
 		ft_printf("Target : %d\n", curr->target->value);
 		ft_printf("-----------\n\n");
 		curr = curr->next;

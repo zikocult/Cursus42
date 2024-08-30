@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 19:24:50 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/27 23:37:57 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/30 10:10:27 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	remove_node(t_content *node, t_push *data)
 	free(node);
 }
 
-int			list_len(t_content *head)
+int	list_len(t_content *head)
 {
 	int			count;
 	t_content	*curr;

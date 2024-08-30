@@ -6,12 +6,11 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 08:05:15 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/29 11:24:14 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/30 12:08:44 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-#include <stdbool.h>
 
 bool	check_alpha(const char *ptr)
 {

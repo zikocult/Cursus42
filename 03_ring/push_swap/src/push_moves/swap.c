@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:09:57 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/29 11:19:55 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/30 11:08:32 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,24 @@ static void	swap(t_content **head)
 	(*head)->prev = NULL;
 }
 
-void	sa(t_push *data)
+void	sa(t_push *data, bool check)
 {
 	swap(&data->a_head);
-	ft_putstr_fd("sa\n", 1);
+	if (check)
+		ft_putstr_fd("sa\n", 1);
 }
 
-void	sb(t_push *data)
+void	sb(t_push *data, bool check)
 {
 	swap(&data->b_head);
-	ft_putstr_fd("sb\n", 1);
+	if (check)
+		ft_putstr_fd("sb\n", 1);
 }
 
-void	ss(t_push *data)
+void	ss(t_push *data, bool check)
 {
 	swap(&data->a_head);
 	swap(&data->b_head);
-	ft_putstr_fd("ss\n", 1);
+	if (check)
+		ft_putstr_fd("ss\n", 1);
 }

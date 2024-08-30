@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 11:01:19 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/29 11:18:46 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/30 11:08:20 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,24 @@ static void	reverse_rotate(t_content **head)
 	new_node->next->prev = new_node;
 }
 
-void	rra(t_push *data)
+void	rra(t_push *data, bool check)
 {
 	reverse_rotate(&data->a_head);
-	ft_putstr_fd("rra\n", 1);
+	if (check)
+		ft_putstr_fd("rra\n", 1);
 }
 
-void	rrb(t_push *data)
+void	rrb(t_push *data, bool check)
 {
 	reverse_rotate(&data->b_head);
-	ft_putstr_fd("rrb\n", 1);
+	if (check)
+		ft_putstr_fd("rrb\n", 1);
 }
 
-void	rrr(t_push *data)
+void	rrr(t_push *data, bool check)
 {
 	reverse_rotate(&data->a_head);
 	reverse_rotate(&data->b_head);
-	ft_putstr_fd("rrr\n", 1);
+	if (check)
+		ft_putstr_fd("rrr\n", 1);
 }
