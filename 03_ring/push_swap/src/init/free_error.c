@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:27:23 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/31 19:58:18 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/31 20:10:05 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	printerror(int error, bool check)
 		if (error == 5)
 			ft_putstr_fd("Error: Number exceed the integers limit\n", 2);
 	}
+	else
+		ft_putstr_fd("KO\n", 2);
 	exit (error);
 }
 
