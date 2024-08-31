@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 17:59:49 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/30 11:34:39 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/31 19:56:58 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ typedef struct s_push
 // void		muestra_struct(t_content *head);
 
 //Initialitzation and checks
-void		init_data_argv(char *argv, t_push *data);
-void		init_data_argc(int argc, char **argv, t_push *data);
-void		init_list(t_push *data);
+void		init_data_argv(char *argv, t_push *data, bool check);
+void		init_data_argc(int argc, char **argv, t_push *data, bool check);
+void		init_list(t_push *data, bool check);
 bool		check_alpha(const char *ptr);
 void		remove_node(t_content *node, t_push *data);
 void		insert_end(t_content **tail, t_content **head, int value,
@@ -88,7 +88,7 @@ t_content	*find_last_node(t_content *head);
 long		ft_atol(const char *ptr);
 void		deallocate(t_content **head);
 void		free_pointer(char **pointer);
-void		printerror(int error);
+void		printerror(int error, bool check);
 void		clean_exit(t_push *data);
 
 #endif

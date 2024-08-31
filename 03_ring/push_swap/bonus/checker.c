@@ -6,13 +6,14 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/30 18:40:12 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/31 20:00:36 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/include/libft.h"
 #include "../libft/include/get_next_line.h"
 #include "../include/push_swap.h"
+#include <stdbool.h>
 
 static int	scmp(char *str_1, char *str_2)
 {
@@ -59,10 +60,10 @@ int	main(int argc, char **argv)
 	if (argc < 2 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc > 2)
-		init_data_argc(argc, argv, &data);
+		init_data_argc(argc, argv, &data, false);
 	else if (argc == 2)
-		init_data_argv(argv[1], &data);
-	init_list(&data);
+		init_data_argv(argv[1], &data, false);
+	init_list(&data, false);
 	len = list_len(data.a_head);
 	gnl = get_next_line(0);
 	while (gnl)

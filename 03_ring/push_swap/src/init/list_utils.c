@@ -6,11 +6,12 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 19:24:50 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/30 10:10:27 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/31 19:59:17 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+#include <stdbool.h>
 
 void	remove_node(t_content *node, t_push *data)
 {
@@ -60,7 +61,7 @@ static void	first_node(t_content **head, t_content **tail, int value,
 	if (!new_node)
 	{
 		clean_exit(data);
-		printerror(2);
+		printerror(2, true);
 	}
 	new_node->value = value;
 	new_node->next = NULL;
@@ -82,7 +83,7 @@ void	insert_end(t_content **head, t_content **tail, int value, t_push *data)
 	if (!new_node)
 	{
 		clean_exit(data);
-		printerror(2);
+		printerror(2, true);
 	}
 	new_node->value = value;
 	new_node->next = NULL;

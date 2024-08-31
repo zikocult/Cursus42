@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:27:23 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/30 10:09:39 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/08/31 19:58:18 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,21 @@ void	deallocate(t_content **head)
 	free(curr);
 }
 
-void	printerror(int error)
+void	printerror(int error, bool check)
 {
-	if (error == 1)
-		ft_putstr_fd("Error: Invalid number of arguments\n", 2);
-	if (error == 2)
-		ft_putstr_fd("Error: Invalid allocation memory\n", 2);
-	if (error == 3)
-		ft_putstr_fd("Error: Duplicated values\n", 2);
-	if (error == 4)
-		ft_putstr_fd("Error: No numeric argument\n", 2);
-	if (error == 5)
-		ft_putstr_fd("Error: Number exceed the integers limit\n", 2);
+	if (check)
+	{
+		if (error == 1)
+			ft_putstr_fd("Error: Invalid number of arguments\n", 2);
+		if (error == 2)
+			ft_putstr_fd("Error: Invalid allocation memory\n", 2);
+		if (error == 3)
+			ft_putstr_fd("Error: Duplicated values\n", 2);
+		if (error == 4)
+			ft_putstr_fd("Error: No numeric argument\n", 2);
+		if (error == 5)
+			ft_putstr_fd("Error: Number exceed the integers limit\n", 2);
+	}
 	exit (error);
 }
 
