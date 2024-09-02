@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 23:40:10 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/30 12:04:40 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/03 01:27:53 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,21 +68,20 @@ void	set_price(t_content *head_a, t_content *head_b)
 {
 	t_content	*curr;
 
-	curr = head_a;
-	while (curr)
-	{
-		curr->price = curr->position;
-		if (!(curr->under_median))
-			curr->price = list_len(head_a) - (curr->position);
-		curr = curr->next;
-	}
 	curr = head_b;
 	while (curr)
 	{
 		curr->price = curr->position;
 		if (!(curr->under_median))
 			curr->price = list_len(head_b) - (curr->position);
-		curr->price += curr->target->price;
+		if (curr->target->under_median)
+			curr->price += curr->target->position;
+		else
+			curr->price += list_len(head_a) - (curr->target->position);
+		if ((curr->under_median == true && curr->target->under_median == false)
+			|| (curr->target->under_median == true
+				&& curr->under_median == false))
+			curr->price += 1;
 		curr = curr->next;
 	}
 }
