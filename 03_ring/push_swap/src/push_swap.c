@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:11:46 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/31 19:59:36 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/02 11:52:34 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	main(int argc, char **argv)
 		else if (list_len(data.a_head) == 3)
 			sortofthree(&data.a_head, &data);
 		else
-			push_swap(&data);
+			great_sort(&data, list_len(data.a_head));
+			// turkey_sort(&data);
 	}
 	clean_exit(&data);
 	return (0);

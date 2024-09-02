@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 17:59:49 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/02 11:59:30 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/02 16:28:28 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,6 @@ void		turkey_sort(t_push *data);
 void		up_min_a(t_push *data);
 void		finish_rotation(t_content **head, t_content *node, char list,
 				t_push *data);
-
-// Quicksort algorithm
-void		great_sort(t_push *data, int len);
-int			*cont_dup(t_content *head);
 
 // Init stack
 void		init_nodes(t_content *head_a, t_content *head_b);

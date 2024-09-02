@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   greatsort.c                                        :+:      :+:    :+:   */
+/*   turkeysort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 22:52:37 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/30 18:15:02 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/02 09:37:58 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	move_nodes(t_content **head_a, t_content **head_b, t_push *data)
 	pa(data, true);
 }
 
-void	push_swap(t_push *data)
+void	turkey_sort(t_push *data)
 {
 	int			len_a;
 
