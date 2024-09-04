@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 08:05:15 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/04 23:54:09 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/05 00:28:00 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 bool	check_alpha(const char *ptr)
 {
-	int	i;
+	int		i;
+	bool	check;
 
 	i = 0;
+	check = false;
 	if (!ptr[i])
 		return (false);
 	while (ptr[i] == ' ' || (ptr[i] >= 9 && ptr[i] <= 13))
 		i++;
 	if ((ptr[i] == '+') || (ptr[i] == '-'))
-	{
-		if ((ptr[i + 1] < '0') || (ptr[i + 1] > '9'))
-			return (false);
-		else
-			i++;
-	}
-	while (ptr[i] != '\0' && ptr[i] >= '0' && ptr[i] <= '9')
 		i++;
+	while (ptr[i] != '\0' && ptr[i] >= '0' && ptr[i] <= '9')
+	{
+		check = true;
+		i++;
+	}
 	while (ptr[i] == ' ' || (ptr[i] >= 9 && ptr[i] <= 13))
 		i++;
 	if (ptr[i] != '\0')
 		return (false);
-	return (true);
+	return (check);
 }
 
 long	ft_atol(const char *ptr)
@@ -59,9 +59,5 @@ long	ft_atol(const char *ptr)
 		result = (result * 10) + (ptr[i] - '0');
 		i++;
 	}
-	while (ptr[i] == ' ' || (ptr[i] >= 9 && ptr[i] <= 13))
-		i++;
-	if (ptr[i] != '\0')
-		return (0);
 	return (result * neg);
 }

@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:30:55 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/04 23:27:04 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/05 00:22:13 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,19 +81,16 @@ void	init_list(t_push *data, bool check)
 	i = 0;
 	while (data->input[i])
 	{
+		if (!check_alpha(data->input[i]))
+		{
+			clean_exit(data);
+			printerror(4, check);
+		}
 		value = ft_atol(data->input[i]);
 		if (value < INT_MIN || value > INT_MAX)
 		{
 			clean_exit(data);
 			printerror(5, check);
-		}
-		if (value == 0)
-		{
-			if (!check_alpha(data->input[i]))
-			{
-				clean_exit(data);
-				printerror(4, check);
-			}
 		}
 		insert_end(&data->a_head, &data->a_tail, value, data);
 		i++;
