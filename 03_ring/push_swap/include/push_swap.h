@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 17:59:49 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/05 00:36:26 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/05 00:57:32 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_push
 {
 	int			median;
 	char		**input;
-	bool		check;
+	bool		check_commands;
 	t_content	*a_head;
 	t_content	*b_head;
 	t_content	*a_tail;
@@ -44,11 +44,10 @@ typedef struct s_push
 void		init_data_argv(char *argv, t_push *data, bool check);
 void		init_data_argc(int argc, char **argv, t_push *data, bool check);
 void		init_list(t_push *data, bool check);
+void		init_med(t_push *data);
 bool		check_alpha(const char *ptr);
-void		remove_node(t_content *node, t_push *data);
 void		insert_end(t_content **tail, t_content **head, int value,
 				t_push *data);
-void		init_med(t_push *data);
 
 // Utils and clean
 long		ft_atol(const char *ptr);
@@ -86,7 +85,6 @@ void		set_best_move(t_content *head);
 void		set_position(t_content *head);
 int			list_len(t_content *head);
 t_content	*cheap_node(t_content *head);
-t_content	*find_max(t_content *head);
 t_content	*find_min(t_content *head);
 t_content	*find_last_node(t_content *head);
 

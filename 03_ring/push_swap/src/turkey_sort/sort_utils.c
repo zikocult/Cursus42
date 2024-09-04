@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 01:17:49 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/30 11:35:51 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/05 00:55:07 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,28 +53,6 @@ void	up_min_a(t_push *data)
 	else
 		while (data->a_head != min)
 			rra(data, true);
-}
-
-t_content	*find_max(t_content *head)
-{
-	long		max;
-	t_content	*max_node;
-	t_content	*curr;
-
-	curr = head;
-	max = LONG_MIN;
-	if (!curr)
-		return (NULL);
-	while (curr)
-	{
-		if (curr->value > max)
-		{
-			max = curr->value;
-			max_node = curr;
-		}
-		curr = curr->next;
-	}
-	return (max_node);
 }
 
 t_content	*find_min(t_content *head)

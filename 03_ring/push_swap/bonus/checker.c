@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/04 23:33:36 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/05 00:50:44 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ static void	command_test(t_push *data, char *gnl)
 	else if (!scmp(gnl, "rrr\n"))
 		rrr(data, false);
 	else
-		data->check = false;
+		data->check_commands = false;
 }
 
-void	final_check(t_push *data, int len)
+static void	final_check(t_push *data, int len)
 {
 	if (sorted_list(data->a_head) && len == list_len(data->a_head))
 		ft_putstr_fd("OK\n", 1);
 	else
 	{
-		if (data->check == false)
+		if (data->check_commands == false)
 			ft_putstr_fd("Error: Wrong input\n", 2);
 		if (!sorted_list(data->a_head))
 			ft_putstr_fd("Error: No sorted list\n", 2);
@@ -75,12 +75,12 @@ int	main(int argc, char **argv)
 	char		*gnl;
 	int			len;
 
-	data.check = true;
+	data.check_commands = true;
 	if (argc < 2)
 		return (0);
 	else if (argc == 2 && (!argv[1][0] || argv[1][0] == 32
 			|| (argv[1][0] >= 9 && argv[1][0] <= 13)))
-		printerror(8, false);
+		printerror(6, false);
 	else if (argc > 2)
 		init_data_argc(argc, argv, &data, false);
 	else if (argc == 2)
