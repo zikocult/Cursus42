@@ -84,7 +84,6 @@ normi:
 			$(NORM) $(SRCS)
 			$(NORM) $(LIBS)
 			@make normi -C ./bonus
-			@make normi -C ./libft
 
 info:
 			$(info $(SRCS_FILES))

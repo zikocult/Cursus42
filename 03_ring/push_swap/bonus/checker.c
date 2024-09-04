@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/04 19:28:46 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/04 23:33:36 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ int	main(int argc, char **argv)
 	data.check = true;
 	if (argc < 2)
 		return (0);
-	else if (argc == 2 && !argv[1][0])
+	else if (argc == 2 && (!argv[1][0] || argv[1][0] == 32
+			|| (argv[1][0] >= 9 && argv[1][0] <= 13)))
 		printerror(8, false);
 	else if (argc > 2)
 		init_data_argc(argc, argv, &data, false);
