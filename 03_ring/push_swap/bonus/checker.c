@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/04 18:12:05 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/04 19:28:46 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	final_check(t_push *data, int len)
 	{
 		if (data->check == false)
 			ft_putstr_fd("Error: Wrong input\n", 2);
-		else if (!sorted_list(data->a_head))
+		if (!sorted_list(data->a_head))
 			ft_putstr_fd("Error: No sorted list\n", 2);
 		else if (len != list_len(data->a_head))
 			ft_putstr_fd("Error: No all initial elements are in the list\n", 2);
