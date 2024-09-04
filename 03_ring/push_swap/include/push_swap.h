@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 17:59:49 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/04 17:45:26 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/05 00:36:26 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../libft/include/libft.h"
-# include "../libft/include/ft_printf.h"
 # include <stdlib.h>
 # include <limits.h>
 # include <stdbool.h>
