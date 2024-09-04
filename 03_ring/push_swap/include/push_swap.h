@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 17:59:49 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/02 11:59:30 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/04 17:45:26 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,13 @@ typedef struct s_content
 
 typedef struct s_push
 {
+	int			median;
 	char		**input;
+	bool		check;
 	t_content	*a_head;
 	t_content	*b_head;
 	t_content	*a_tail;
 }	t_push;
-
-//Mis propios test, serán eliminados en la entrega
-// void		test(t_push *data, int argc);
-// void		mostrar_lista(t_push *data);
-// void		muestra_struct(t_content *head);
 
 //Initialitzation and checks
 void		init_data_argv(char *argv, t_push *data, bool check);
@@ -52,6 +49,7 @@ bool		check_alpha(const char *ptr);
 void		remove_node(t_content *node, t_push *data);
 void		insert_end(t_content **tail, t_content **head, int value,
 				t_push *data);
+void		init_med(t_push *data);
 
 // Utils and clean
 long		ft_atol(const char *ptr);
@@ -79,12 +77,9 @@ void		sortofthree(t_content **head, t_push *data);
 void		five_elements(t_content **head_a, t_content **head_b, t_push *data);
 void		turkey_sort(t_push *data);
 void		up_min_a(t_push *data);
+void		pusht_to_b(t_push *data, bool check);
 void		finish_rotation(t_content **head, t_content *node, char list,
 				t_push *data);
-
-// Quicksort algorithm
-void		great_sort(t_push *data, int len);
-int			*cont_dup(t_content *head);
 
 // Init stack
 void		init_nodes(t_content *head_a, t_content *head_b);

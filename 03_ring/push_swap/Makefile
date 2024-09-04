@@ -21,7 +21,12 @@ LIBFTINC	= libft/include
 SRC_DIR		= src/
 OBJ_DIR		= obj/
 
-SRCS_FILES	=	$(shell find src -type f -iname "*.c" | sed 's#[.][^.]*$$##')
+SRCS_FILES	= src/push_moves/push src/push_moves/rotate \
+			  src/push_moves/reverse_rotate src/push_moves/swap \
+			  src/turkey_sort/sort_utils src/turkey_sort/tiny_sorts \
+			  src/turkey_sort/sort_init src/turkey_sort/turkey_sort \
+			  src/init/utils src/init/free_error src/init/init_data \
+			  src/init/init_med src/init/list_utils src/push_swap
 
 SRCS 		= $(addsuffix .c, $(SRCS_FILES))
 SRCDIRS		= $(shell find src/ -type d)
@@ -53,9 +58,7 @@ $(LIBFT) :
 $(LIBRARY) : $(OBJS)
 			$(MAKE_LIB) $(LIBRARY) $^
 
-bonus:		$(BONUS)
-
-$(BONUS)	:
+bonus:		
 			make -C ./bonus
 
 re_bonus: fclean bonus
@@ -80,6 +83,7 @@ re:			fclean $(NAME)
 normi:
 			$(NORM) $(SRCS)
 			$(NORM) $(LIBS)
+			@make normi -C ./bonus
 			@make normi -C ./libft
 
 info:

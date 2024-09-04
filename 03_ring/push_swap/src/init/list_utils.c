@@ -6,12 +6,11 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 19:24:50 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/31 19:59:17 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/04 17:14:19 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-#include <stdbool.h>
 
 void	remove_node(t_content *node, t_push *data)
 {

@@ -6,49 +6,93 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/02 10:36:57 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/04 18:12:05 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/include/libft.h"
+#include "../libft/include/get_next_line.h"
 #include "../include/push_swap.h"
 #include <stdbool.h>
 
-static void	sort_list(t_push *data)
+static int	scmp(char *str_1, char *str_2)
 {
-	if (list_len(data->a_head) == 2)
-		sa(data, true);
-	else if (list_len(data->a_head) == 3)
-		sortofthree(&data->a_head, data);
+	while (*str_1 == *str_2 && *str_1)
+	{
+		++str_1;
+		++str_2;
+	}
+	return (*str_1 - *str_2);
+}
+
+static void	command_test(t_push *data, char *gnl)
+{
+	if (!scmp(gnl, "pa\n"))
+		pa(data, false);
+	else if (!scmp(gnl, "pb\n"))
+		pb(data, false);
+	else if (!scmp(gnl, "sa\n"))
+		sa(data, false);
+	else if (!scmp(gnl, "sb\n"))
+		sb(data, false);
+	else if (!scmp(gnl, "ss\n"))
+		ss(data, false);
+	else if (!scmp(gnl, "ra\n"))
+		ra(data, false);
+	else if (!scmp(gnl, "rb\n"))
+		rb(data, false);
+	else if (!scmp(gnl, "rr\n"))
+		rr(data, false);
+	else if (!scmp(gnl, "rra\n"))
+		rra(data, false);
+	else if (!scmp(gnl, "rrb\n"))
+		rrb(data, false);
+	else if (!scmp(gnl, "rrr\n"))
+		rrr(data, false);
 	else
-		turkey_sort(data);
+		data->check = false;
+}
+
+void	final_check(t_push *data, int len)
+{
+	if (sorted_list(data->a_head) && len == list_len(data->a_head))
+		ft_putstr_fd("OK\n", 1);
+	else
+	{
+		if (data->check == false)
+			ft_putstr_fd("Error: Wrong input\n", 2);
+		else if (!sorted_list(data->a_head))
+			ft_putstr_fd("Error: No sorted list\n", 2);
+		else if (len != list_len(data->a_head))
+			ft_putstr_fd("Error: No all initial elements are in the list\n", 2);
+		ft_putstr_fd("KO\n", 2);
+	}
 }
 
 int	main(int argc, char **argv)
 {
 	t_push		data;
+	char		*gnl;
 	int			len;
 
-	if (argc < 2 || (argc == 2 && !argv[1][0]))
-		printerror(1, false);
+	data.check = true;
+	if (argc < 2)
+		return (0);
+	else if (argc == 2 && !argv[1][0])
+		printerror(8, false);
 	else if (argc > 2)
-		init_data_argc(argc, argv, &data, true);
+		init_data_argc(argc, argv, &data, false);
 	else if (argc == 2)
-		init_data_argv(argv[1], &data, true);
+		init_data_argv(argv[1], &data, false);
 	init_list(&data, false);
 	len = list_len(data.a_head);
-	if (!sorted_list(data.a_head))
-		sort_list(&data);
-	if (sorted_list(data.a_head) && len == list_len(data.a_head))
-		ft_putstr_fd("OK\n", 1);
-	else
+	gnl = get_next_line(0);
+	while (gnl)
 	{
-		if (!sorted_list(data.a_head))
-			ft_putstr_fd("Error: No sorted list\n", 2);
-		if (len != list_len(data.a_head))
-			ft_putstr_fd("Error: No all initial elements are in the list", 2);
-		ft_putstr_fd("KO\n", 2);
+		command_test(&data, gnl);
+		gnl = get_next_line(0);
 	}
+	final_check(&data, len);
 	clean_exit(&data);
 	return (0);
 }

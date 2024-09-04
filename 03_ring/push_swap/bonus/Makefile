@@ -6,7 +6,7 @@
 ##   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        ##
 ##                                                +#+#+#+#+#+   +#+           ##
 ##   Created: 2024/08/30 12:50:46 by Guillem Barulls   #+#    #+#             ##
-##   Updated: 2024/08/30 17:57:17 by Guillem Barulls  ###   ########.fr       ##
+##   Updated: 2024/09/04 19:08:43 by Guillem Barulls  ###   ########.fr       ##
 ##                                                                            ##
 ## ########################################################################## ##
 
@@ -25,6 +25,7 @@ CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror -g
 RM			= @rm -rf
 MKDIR		= @mkdir -p
+NORM		= @norminette
 
 all:		$(NAME)
 
@@ -45,7 +46,11 @@ clean:
 
 fclean:		clean	
 			$(RM) $(NAME)
+			$(RM) $(NAMEC)
 
 re:			fclean $(NAME)
+
+normi:		
+			$(NORM)	$(SRCS_FILES)
 
 .PHONY:		all clean fclean re

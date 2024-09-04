@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   turkeysort.c                                       :+:      :+:    :+:   */
+/*   turkey_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 22:52:37 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/02 09:37:58 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/04 16:30:57 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	turkey_sort(t_push *data)
 	else
 	{
 		while (len_a-- > 3)
-			pb(data, true);
+			pusht_to_b(data, true);
 	}
 	sortofthree(&data->a_head, data);
 	while (data->b_head)

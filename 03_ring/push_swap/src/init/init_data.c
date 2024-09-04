@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:30:55 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/31 19:57:00 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/04 16:53:51 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,5 @@ void	init_list(t_push *data, bool check)
 		i++;
 	}
 	check_duplicates(data, check);
+	init_med(data);
 }

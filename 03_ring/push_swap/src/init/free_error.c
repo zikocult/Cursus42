@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:27:23 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/02 10:43:24 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/04 19:13:07 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ void	deallocate(t_content **head)
 
 void	printerror(int error, bool check)
 {
-	if (error == 1)
+	if (error == 1 && check == true)
 		ft_putstr_fd("Error: Instruction doesn't exist\n", 2);
-	if (error == 2)
+	if (error == 2 && check == true)
 		ft_putstr_fd("Error: Invalid allocation memory\n", 2);
-	if (error == 3)
+	if (error == 3 && check == true)
 		ft_putstr_fd("Error: There are duplicate values\n", 2);
-	if (error == 4)
+	if (error == 4 && check == true)
 		ft_putstr_fd("Error: Incorrect format\n", 2);
-	if (error == 5)
+	if (error == 5 && check == true)
 		ft_putstr_fd("Error: Some numbers are bigger than integer\n", 2);
 	if (!check)
 		ft_putstr_fd("KO\n", 2);
