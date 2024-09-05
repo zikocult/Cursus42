@@ -66,7 +66,7 @@ $(OBJSDIRS) :
 clean:
 			$(RM) $(OBJS)
 
-fclean:		clean
+fclean:		
 			$(RM) $(OBJSDIRS)
 			$(RM) $(NAME)
 

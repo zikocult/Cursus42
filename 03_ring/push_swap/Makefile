@@ -36,7 +36,7 @@ OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
-RM			= @rm -rf
+RM			= rm -rf
 MKDIR		= @mkdir -p
 NORM		= @norminette
 MAKE_LIB	= ar -rcs
@@ -53,6 +53,9 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 
 $(OBJSDIRS) :
 			$(MKDIR) $(OBJSDIRS)
+
+$(LIBFT):
+			make -C ./libft
 
 libft:
 			make -C ./libft

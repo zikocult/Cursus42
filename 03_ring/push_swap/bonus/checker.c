@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/05 18:06:54 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/05 21:33:35 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static int	scmp(char *str_1, char *str_2)
 {
 	while (*str_1 == *str_2 && *str_1)
 	{
-		++str_1;
-		++str_2;
+		str_1++;
+		str_2++;
 	}
 	return (*str_1 - *str_2);
 }
