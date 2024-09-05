@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/05 10:30:31 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/09/05 10:55:15 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,13 @@ static void	command_test(t_push *data, char *gnl)
 
 static void	final_check(t_push *data, int len)
 {
-	if (sorted_list(data->a_head) && len == list_len(data->a_head))
+	if (sorted_list(data->a_head) && len == list_len(data->a_head)
+		&& data->check_commands == true)
 		ft_putstr_fd("OK\n", 1);
 	else
 	{
 		if (data->check_commands == false)
-			ft_putstr_fd("Error: Wrong input\n", 2);
+			ft_putstr_fd("Error: Wrong output\n", 2);
 		if (!sorted_list(data->a_head))
 			ft_putstr_fd("Error: No sorted list\n", 2);
 		else if (len != list_len(data->a_head))
