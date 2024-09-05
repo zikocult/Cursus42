@@ -6,7 +6,7 @@
 ##   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        ##
 ##                                                +#+#+#+#+#+   +#+           ##
 ##   Created: 2024/08/30 12:50:46 by Guillem Barulls   #+#    #+#             ##
-##   Updated: 2024/09/05 21:40:33 by Guillem Barulls  ###   ########.fr       ##
+##   Updated: 2024/09/05 21:44:16 by Guillem Barulls  ###   ########.fr       ##
 ##                                                                            ##
 ## ########################################################################## ##
 
@@ -36,12 +36,6 @@ $(NAME):	$(PUSH) $(LIBFT) $(OBJS) Makefile
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 			$(CC) $(CFLAGS) -c $< -o $@
 
-$(PUSH):
-			make -C ../
-
-$(LIBFT):
-			make -C ../libft/
-
 push_swap:
 			make -C ../
 libft:
@@ -52,7 +46,7 @@ clean:
 fclean:		clean	
 			$(RM) $(NAME)
 
-re:			fclean $(NAME)
+re:			fclean all
 
 normi:		
 			$(NORM)	$(SRCS_FILES)

@@ -54,9 +54,6 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 $(OBJSDIRS) :
 			$(MKDIR) $(OBJSDIRS)
 
-$(LIBFT):
-			make -C ./libft
-
 libft:
 			make -C ./libft
 
@@ -80,7 +77,7 @@ fclean:
 			make fclean -C ./libft
 			make fclean -C ./bonus
 
-re:			fclean $(NAME)
+re:			fclean all
 
 normi:
 			$(NORM) $(SRCS)
