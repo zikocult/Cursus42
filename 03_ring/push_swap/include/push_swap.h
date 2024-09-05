@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 17:59:49 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/05 00:57:32 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/05 17:58:15 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_push
 	int			median;
 	char		**input;
 	bool		check_commands;
+	bool		check_input;
 	t_content	*a_head;
 	t_content	*b_head;
 	t_content	*a_tail;
