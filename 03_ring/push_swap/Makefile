@@ -34,8 +34,8 @@ OBJSDIRS	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCDIRS))
 OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
-CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I$(LIBFTINC) -g
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
 RM			= @rm -rf
 MKDIR		= @mkdir -p
 NORM		= @norminette
@@ -45,7 +45,7 @@ MAKE_LIB	= ar -rcs
 
 all:		libft $(NAME)
 
-$(NAME):	$(OBJSDIRS) $(OBJS) $(LIBRARY) Makefile
+$(NAME):	$(LIBFT) $(OBJSDIRS) $(OBJS) $(LIBRARY) Makefile
 			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
