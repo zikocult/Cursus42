@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/05 00:50:44 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/05 10:30:31 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	final_check(t_push *data, int len)
 			ft_putstr_fd("Error: No sorted list\n", 2);
 		else if (len != list_len(data->a_head))
 			ft_putstr_fd("Error: No all initial elements are in the list\n", 2);
-		ft_putstr_fd("KO\n", 2);
+		ft_putstr_fd("Error\n", 2);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:27:23 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/04 19:13:07 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/05 10:30:45 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	printerror(int error, bool check)
 	if (error == 5 && check == true)
 		ft_putstr_fd("Error: Some numbers are bigger than integer\n", 2);
 	if (!check)
-		ft_putstr_fd("KO\n", 2);
+		ft_putstr_fd("Error\n", 2);
 	exit (error);
 }
 
