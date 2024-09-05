@@ -17,7 +17,6 @@ LIBRARY		= include/push_swap.a
 LIBS		= include/push_swap.h
 LIBFT		= libft/libft.a
 LIBFTINC	= libft/include
-LIBFTD		= libft/.d
 
 SRC_DIR		= src/
 OBJ_DIR		= obj/
@@ -42,11 +41,11 @@ MKDIR		= @mkdir -p
 NORM		= @norminette
 MAKE_LIB	= ar -rcs
 
-.PHONY:		all clean fclean re info normi bonus re_bonus
+.PHONY:		all clean fclean re info normi bonus re_bonus libft
 
-all:		$(NAME)
+all:		libft $(NAME)
 
-$(NAME):	$(LIBFT) $(OBJSDIRS) $(OBJS) $(LIBRARY) Makefile
+$(NAME):	$(OBJSDIRS) $(OBJS) $(LIBRARY) Makefile
 			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
@@ -55,11 +54,8 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 $(OBJSDIRS) :
 			$(MKDIR) $(OBJSDIRS)
 
-$(LIBFT):	$(LIBFTD)
+libft:
 			make -C ./libft
-
-$(LIBFTD): $(shell find libft/ -type f)
-			touch $(LIBFTD)
 
 $(LIBRARY) : $(OBJS)
 			$(MAKE_LIB) $(LIBRARY) $^
@@ -78,7 +74,6 @@ fclean:
 			$(RM) $(OBJSDIRS)
 			$(RM) $(LIBRARY)
 			$(RM) $(NAME)
-			$(RM) $(LIBFTD)
 			make fclean -C ./libft
 			make fclean -C ./bonus
 

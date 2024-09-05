@@ -44,7 +44,7 @@ OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
 SRCS_FILES_INFO	=	$(shell find src/extra -type f -iname "*.c" | sed 's#[.][^.]*$$##')
 
-CC			= gcc
+CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -Iinclude/
 AR			= ar rcs
 RANLIB		= ranlib
