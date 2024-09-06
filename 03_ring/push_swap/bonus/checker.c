@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/06 10:07:12 by gbaruls-         ###   ########.fr       */
+/*   Updated: 2024/09/06 21:36:28 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ int	main(int argc, char **argv)
 	while (gnl)
 	{
 		command_test(&data, gnl);
+		free (gnl);
 		gnl = get_next_line(0);
 	}
 	final_check(&data, len);
