@@ -6,14 +6,13 @@
 /*   By: gbaruls- <gbaruls->                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 09:38:34 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/08/19 20:05:47 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/06 09:22:49 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include "../libft/include/ft_printf.h"
 # include "../libft/include/libft.h"
 # include <unistd.h>
 # include <fcntl.h>

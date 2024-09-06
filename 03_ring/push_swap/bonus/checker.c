@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/05 21:33:35 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/06 10:07:12 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void	command_test(t_push *data, char *gnl)
 
 static void	final_check(t_push *data, int len)
 {
-	if (data->check_input == true)
+	if (data->check_input == true || sorted_list(data->a_head))
 	{
 		if (sorted_list(data->a_head) && len == list_len(data->a_head)
 			&& data->check_commands == true)
@@ -73,7 +73,10 @@ static void	final_check(t_push *data, int len)
 		}
 	}
 	else
-		ft_putstr_fd("OK\n", 1);
+	{
+		ft_putstr_fd("You are using the checker with no input\n", 1);
+		ft_putstr_fd("OK! But only data init and argument input\n", 1);
+	}
 }
 
 static void	data_validation(int argc, char **argv, t_push *data)

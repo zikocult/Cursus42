@@ -42,14 +42,14 @@ OBJSDIRS	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCDIRS))
 OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
-.PHONY:		all clean fclean re info normi
-
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -Iinclude/
 AR			= ar rcs
 RANLIB		= ranlib
 RM			= rm -rf
 MKDIR		= mkdir -p
+
+.PHONY:		all clean fclean re info normi
 
 all:		$(NAME)
 
@@ -61,7 +61,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 			$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJSDIRS) :
-	$(MKDIR) $(OBJSDIRS)
+			$(MKDIR) $(OBJSDIRS)
 
 clean:
 			$(RM) $(OBJS)
@@ -73,8 +73,8 @@ fclean:
 re:			fclean $(NAME)
 
 normi:
-	@norminette $(SRCS)
-	@norminette $(LIBS)
+			@norminette $(SRCS)
+			@norminette $(LIBS)
 
 info:
-	$(info $(SRCS_FILES))
+			$(info $(SRCS_FILES))

@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 11:15:51 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/19 20:05:03 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/06 09:20:08 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	check_cmds(t_pipe *data, int argc)
 	{
 		if (check_cmds2(data, i) == 0)
 		{
-			ft_printf("Comando incorrecto\n");
+			ft_putstr_fd("Comando incorrecto\n", 2);
 			clean_exit(data);
 			exit (1);
 		}

@@ -42,14 +42,14 @@ OBJSDIRS	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCDIRS))
 OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
-SRCS_FILES_INFO	=	$(shell find src/extra -type f -iname "*.c" | sed 's#[.][^.]*$$##')
-
-CC			= gcc
+CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -Iinclude/
 AR			= ar rcs
 RANLIB		= ranlib
 RM			= rm -rf
 MKDIR		= mkdir -p
+
+.PHONY:		all clean fclean re info normi
 
 all:		$(NAME)
 
@@ -66,7 +66,7 @@ $(OBJSDIRS) :
 clean:
 			$(RM) $(OBJS)
 
-fclean:		clean
+fclean:		
 			$(RM) $(OBJSDIRS)
 			$(RM) $(NAME)
 
@@ -77,6 +77,4 @@ normi:
 	@norminette $(LIBS)
 
 info:
-	$(info $(SRCS_FILES_INFO))
-
-.PHONY:		all clean fclean re info normi
+	$(info $(SRCS_FILES))

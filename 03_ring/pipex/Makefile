@@ -27,12 +27,14 @@ OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I$(LIBFTINC) -g
+CFLAGS		= -Wall -Wextra -Werror -I$(LIBFTINC)
 RM			= @rm -rf
 MKDIR		= @mkdir -p
 NORM		= @norminette
 
-all:		$(NAME)
+.PHONY:		all clean fclean re info normi lib
+
+all:		lib $(NAME)
 
 $(NAME):	$(LIBFT) $(OBJSDIRS) $(OBJS) Makefile
 			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
@@ -42,9 +44,6 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 
 $(OBJSDIRS) :
 			$(MKDIR) $(OBJSDIRS)
-
-$(LIBFT) :
-			make -C ./libft
 
 lib :		
 			make -C ./libft
@@ -58,7 +57,7 @@ fclean:
 			$(RM) $(NAME)
 			make fclean -C ./libft
 
-re:			fclean $(NAME)
+re:			fclean all
 
 normi:
 			$(NORM) $(SRCS)
@@ -67,6 +66,3 @@ normi:
 
 info:
 			$(info $(SRCS_FILES))
-
-.PHONY:		all clean fclean re info normi lib
-

@@ -57,13 +57,13 @@ $(OBJSDIRS) :
 libft:
 			make -C ./libft
 
-$(LIBRARY) : $(OBJS)
+$(LIBRARY): $(OBJS)
 			$(MAKE_LIB) $(LIBRARY) $^
 
 bonus:		
 			make -C ./bonus
 
-re_bonus: fclean bonus
+re_bonus:	fclean bonus
 
 clean:
 			$(RM) $(OBJS)

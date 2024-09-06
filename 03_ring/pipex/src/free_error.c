@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 10:30:31 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/19 20:04:44 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/06 09:22:29 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	error_fork(t_pipe *data)
 
 void	error_args(void)
 {
-	ft_printf("Wrong number of arguments\n");
-	ft_printf("Example: ./pipex <file1> <cmd1> <cmd2> <file2>\n");
+	ft_putstr_fd("Wrong number of arguments\n", 2);
+	ft_putstr_fd("Example: ./pipex <file1> <cmd1> <cmd2> ... <file2>\n", 1);
 	exit (1);
 }
 

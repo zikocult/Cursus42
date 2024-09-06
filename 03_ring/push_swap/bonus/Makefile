@@ -6,7 +6,7 @@
 ##   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        ##
 ##                                                +#+#+#+#+#+   +#+           ##
 ##   Created: 2024/08/30 12:50:46 by Guillem Barulls   #+#    #+#             ##
-##   Updated: 2024/09/05 21:44:16 by Guillem Barulls  ###   ########.fr       ##
+##   Updated: 2024/09/06 09:52:56 by gbaruls-         ###   ########.fr       ##
 ##                                                                            ##
 ## ########################################################################## ##
 
@@ -21,7 +21,7 @@ OBJ_DIR		= obj/
 SRCS_FILES	= checker.c
 OBJS		= checker.o
 
-CC			= gcc
+CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
 RM			= rm -rf
 NORM		= @norminette

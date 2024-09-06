@@ -25,11 +25,13 @@ OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -Isrc/
+CFLAGS		= -Wall -Wextra -Werror
 AR			= ar rcs
 RANLIB		= ranlib
 RM			= rm -rf
 MKDIR		= mkdir -p
+
+.PHONY:		all clean fclean re info normi
 
 all:		$(NAME)
 
@@ -46,11 +48,11 @@ $(OBJSDIRS) :
 clean:
 			$(RM) $(OBJS)
 
-fclean:		clean
+fclean:		
 			$(RM) $(OBJSDIRS)
 			$(RM) $(NAME)
 
-re:			fclean $(NAME)
+re:			fclean all
 
 normi:
 	@norminette $(SRCS)
@@ -58,5 +60,3 @@ normi:
 info:
 	$(info $(SRCS_FILES))
 	$(info $(SRCS))
-
-.PHONY:		all clean fclean re info normi

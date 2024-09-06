@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls->                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 10:02:35 by gbaruls-          #+#    #+#             */
-/*   Updated: 2024/08/20 07:55:12 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/06 09:25:13 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	parent(t_pipe *data, int *fd, char **env)
 	if (data->outfile < 0)
 	{
 		clean_exit(data);
-		ft_printf("Outfile error\n");
+		ft_putstr_fd("Outfile error\n", 2);
 		exit(1);
 	}
 	dup2(data->outfile, 1);
@@ -44,7 +44,7 @@ void	child(t_pipe *data, int *fd, char **env)
 	if (data->infile < 0)
 	{
 		clean_exit(data);
-		ft_printf("Infile error\n");
+		ft_putstr_fd("Infile error\n", 2);
 		exit (1);
 	}
 	dup2(data->infile, 0);
@@ -80,11 +80,3 @@ int	main(int argc, char **argv, char **env)
 		error_args();
 	return (0);
 }
-	// ft_printf("%s\n", data.cmd[0]);
-	// ft_printf("%s\n", data.cmd[1]);
-	// ft_printf("%s\n", data.param[0]);
-	// ft_printf("%s\n", data.param[1]);
-	// ft_printf("%s\n", data.files[0]);
-	// ft_printf("%s\n", data.files[1]);
-	// ft_printf("%i\n", data.infile);
-	// ft_printf("%i\n", data.outfile);

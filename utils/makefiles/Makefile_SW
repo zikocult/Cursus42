@@ -13,10 +13,10 @@
 NAME		= rush-02
 LIBS		= rush.h
 
-SRC_DIR		=	src/
-OBJ_DIR		=	obj/
+SRC_DIR		= src/
+OBJ_DIR		= obj/
 
-SRCS_FILES	=	$(shell find src -type f -iname "*.c" | sed 's#[.][^.]*$$##')
+SRCS_FILES	= $(shell find src -type f -iname "*.c" | sed 's#[.][^.]*$$##')
 
 SRCS 		= $(addsuffix .c, $(SRCS_FILES))
 SRCDIRS		= $(shell find src/ -type d)
@@ -24,12 +24,14 @@ OBJSDIRS	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCDIRS))
 OBJSTEMP	= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS_FILES))
 OBJS		= $(addsuffix .o, $(OBJSTEMP))
 
-CC			= gcc
+CC			= cc
 CFLAGS		= -Wall -Wextra -Werror 
 AR			= ar rcs
 RANLIB		= ranlib
 RM			= rm -rf
 MKDIR		= mkdir -p
+
+.PHONY:		all clean fclean re info normi
 
 all:		$(NAME)
 
@@ -40,7 +42,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 			$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJSDIRS) :
-	$(MKDIR) $(OBJSDIRS)
+			$(MKDIR) $(OBJSDIRS)
 
 clean:
 			$(RM) $(OBJS)
@@ -49,13 +51,11 @@ fclean:		clean
 			$(RM) $(OBJSDIRS)
 			$(RM) $(NAME)
 
-re:			fclean $(NAME)
+re:			fclean all
 
 normi:
-	@norminette $(SRCS)
+			@norminette $(SRCS)
 
 info:
-	$(info $(SRCS_FILES))
-
-.PHONY:		all clean fclean re info normi
+			$(info $(SRCS_FILES))
 
