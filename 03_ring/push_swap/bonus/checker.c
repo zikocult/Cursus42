@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:05:36 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/06 21:36:28 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/10 01:05:23 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	final_check(t_push *data, int len)
 				ft_putstr_fd("Error: Wrong output\n", 2);
 			if (!sorted_list(data->a_head))
 				ft_putstr_fd("Error: No sorted list\n", 2);
-			else if (len != list_len(data->a_head))
+			if (len != list_len(data->a_head))
 				ft_putstr_fd
 					("Error: No all initial elements are in the list\n", 2);
 			ft_putstr_fd("Error\n", 2);
@@ -75,7 +75,7 @@ static void	final_check(t_push *data, int len)
 	else
 	{
 		ft_putstr_fd("You are using the checker with no input\n", 1);
-		ft_putstr_fd("OK! But only data init and argument input\n", 1);
+		ft_putstr_fd("OK! But only the data and argument input\n", 1);
 	}
 }
 
