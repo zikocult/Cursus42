@@ -41,22 +41,27 @@ MKDIR		= @mkdir -p
 NORM		= @norminette
 MAKE_LIB	= ar -rcs
 
-.PHONY:		all clean fclean re info normi bonus re_bonus libft
+.PHONY:		all clean fclean re info normi bonus re_bonus libft library
 
 all:		libft $(NAME)
 
 $(NAME):	$(LIBFT) $(OBJSDIRS) $(OBJS) Makefile
-			$(MAKE_LIB) $(LIBRARY) $(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(OBJSDIRS) :
-	$(MKDIR) $(OBJSDIRS)
+			$(MKDIR) $(OBJSDIRS)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 			$(CC) $(CFLAGS) -c $< -o $@
 
 libft:
 			make -C ./libft
+
+library:    libft $(NAME) $(LIBRARY)
+
+$(LIBRARY):	$(LIBFT) $(OBJSDIRS) $(OBJS) Makefile
+			$(MAKE_LIB) $(LIBRARY) $(OBJS)
+			ranlib $(LIBRARY)
 
 bonus:		
 			make -C ./bonus

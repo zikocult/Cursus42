@@ -6,7 +6,7 @@
 ##   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        ##
 ##                                                +#+#+#+#+#+   +#+           ##
 ##   Created: 2024/08/30 12:50:46 by Guillem Barulls   #+#    #+#             ##
-##   Updated: 2024/09/09 21:32:59 by Guillem Barulls  ###   ########.fr       ##
+##   Updated: 2024/09/09 21:51:07 by Guillem Barulls  ###   ########.fr       ##
 ##                                                                            ##
 ## ########################################################################## ##
 
@@ -28,7 +28,7 @@ NORM		= @norminette
 
 .PHONY:		all clean fclean re normi push_swap libft
 
-all:		libft push_swap $(NAME)
+all:		push_swap $(NAME)
 
 $(NAME):	$(PUSH) $(LIBFT) $(OBJS) Makefile
 			$(CC) $(CFLAGS) $(OBJS) $(PUSH_SWAP) $(LIBFT) -o $(NAME)
@@ -37,9 +37,8 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c Makefile
 			$(CC) $(CFLAGS) -c $< -o $@
 
 push_swap:
-			make -C ../
-libft:
-			make -C ../libft/
+			make library -C ../
+
 clean:
 			$(RM) $(OBJS)
 
