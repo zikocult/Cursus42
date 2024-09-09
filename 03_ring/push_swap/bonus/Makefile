@@ -6,7 +6,7 @@
 ##   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        ##
 ##                                                +#+#+#+#+#+   +#+           ##
 ##   Created: 2024/08/30 12:50:46 by Guillem Barulls   #+#    #+#             ##
-##   Updated: 2024/09/06 09:52:56 by gbaruls-         ###   ########.fr       ##
+##   Updated: 2024/09/09 21:32:59 by Guillem Barulls  ###   ########.fr       ##
 ##                                                                            ##
 ## ########################################################################## ##
 
@@ -22,7 +22,7 @@ SRCS_FILES	= checker.c
 OBJS		= checker.o
 
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
 NORM		= @norminette
 
@@ -33,7 +33,7 @@ all:		libft push_swap $(NAME)
 $(NAME):	$(PUSH) $(LIBFT) $(OBJS) Makefile
 			$(CC) $(CFLAGS) $(OBJS) $(PUSH_SWAP) $(LIBFT) -o $(NAME)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c Makefile
 			$(CC) $(CFLAGS) -c $< -o $@
 
 push_swap:
