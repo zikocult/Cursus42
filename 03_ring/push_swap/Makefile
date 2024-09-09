@@ -45,7 +45,9 @@ MAKE_LIB	= ar -rcs
 
 all:		libft $(NAME)
 
-$(NAME):	$(LIBFT) $(OBJSDIRS) $(OBJS) $(LIBRARY) Makefile
+$(NAME):	$(LIBFT) $(OBJSDIRS) $(OBJS) Makefile
+			$(MAKE_LIB) $(LIBRARY) $(OBJS)
+			ranlib $(LIBRARY)
 			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
@@ -56,9 +58,6 @@ $(OBJSDIRS) :
 
 libft:
 			make -C ./libft
-
-$(LIBRARY): $(OBJS)
-			$(MAKE_LIB) $(LIBRARY) $^
 
 bonus:		
 			make -C ./bonus
