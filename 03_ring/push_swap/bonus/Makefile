@@ -6,7 +6,7 @@
 ##   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        ##
 ##                                                +#+#+#+#+#+   +#+           ##
 ##   Created: 2024/08/30 12:50:46 by Guillem Barulls   #+#    #+#             ##
-##   Updated: 2024/09/09 21:51:07 by Guillem Barulls  ###   ########.fr       ##
+##   Updated: 2024/09/09 23:51:43 by Guillem Barulls  ###   ########.fr       ##
 ##                                                                            ##
 ## ########################################################################## ##
 
@@ -30,7 +30,7 @@ NORM		= @norminette
 
 all:		push_swap $(NAME)
 
-$(NAME):	$(PUSH) $(LIBFT) $(OBJS) Makefile
+$(NAME):	$(PUSH) $(LIBFT) $(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) $(PUSH_SWAP) $(LIBFT) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c Makefile
