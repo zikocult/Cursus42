@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:09:57 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/30 11:08:32 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/10 13:07:03 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	swap(t_content **head)
 {
-	if (*head == NULL || head == NULL)
+	if (head == NULL || *head == NULL || list_len(*head) <= 1)
 		return ;
 	*head = (*head)->next;
 	(*head)->prev->prev = *head;

@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:50:20 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/08/30 10:32:53 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/10 13:04:26 by gbaruls-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	rotate(t_content **head)
 {
 	t_content	*new_node;
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL || *head == NULL || list_len(*head) <= 1)
 		return ;
 	new_node = find_last_node(*head);
 	new_node->next = *head;
