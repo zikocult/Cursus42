@@ -13,13 +13,13 @@
 	- Used technologies:
 		- C / Git
 
-### Born2beroot
+### **Born2beroot**
 
 <p align="left">
   <a href="https://github.com/zikocult/Cursus42/tree/main/02_ring"><img src="https://github.com/zikocult/Cursus42/blob/main/02_ring/docs/assets/Born2beroot/Born2beroot.png" /></a>
 </p>
 
-### PrintF
+### **PrintF**
 
 <p align="left">
   <a href="https://github.com/zikocult/Cursus42/tree/main/02_ring"><img src="https://github.com/zikocult/Cursus42/blob/main/02_ring/docs/assets/printf/ft_printf.png" /></a>
@@ -27,7 +27,7 @@
 
 [Here the code.](https://github.com/zikocult/Cursus42/tree/main/02_ring/printf)
 
-### GetNexLine
+### **GetNexLine**
 
 <p align="left">
   <a href="https://github.com/zikocult/Cursus42/tree/main/02_ring"><img src="https://github.com/zikocult/Cursus42/blob/main/02_ring/docs/assets/GNL/gnl.png" /></a>
