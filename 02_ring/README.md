@@ -1,4 +1,4 @@
-## Milestone2 Index
+## Milestone2 Results
 
 - [Born2beroot](https://github.com/zikocult/Cursus42/tree/main/02_ring/born2beroot)
   	- Linux and the virtualization comes together in this project, becoming a real Linux system administrator
@@ -25,12 +25,8 @@
   <a href="https://github.com/zikocult/Cursus42/tree/main/02_ring"><img src="https://github.com/zikocult/Cursus42/blob/main/02_ring/docs/assets/printf/ft_printf.png" /></a>
 </p>
 
-[Here the code.](https://github.com/zikocult/Cursus42/tree/main/02_ring/printf)
-
 ### **GetNexLine**
 
 <p align="left">
   <a href="https://github.com/zikocult/Cursus42/tree/main/02_ring"><img src="https://github.com/zikocult/Cursus42/blob/main/02_ring/docs/assets/GNL/gnl.png" /></a>
 </p>
-
-[Here the code](https://github.com/zikocult/Cursus42/tree/main/02_ring/getnextline).
