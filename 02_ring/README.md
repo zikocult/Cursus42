@@ -18,6 +18,7 @@
 <p align="left">
   <a href="https://github.com/zikocult/Cursus42/tree/main/02_ring"><img src="https://github.com/zikocult/Cursus42/blob/main/02_ring/docs/assets/Born2beroot/Born2beroot.png" /></a>
 </p>
+
 ### PrintF
 
 <p align="left">
@@ -25,6 +26,7 @@
 </p>
 
 [Here the code.](https://github.com/zikocult/Cursus42/tree/main/02_ring/printf)
+
 ### GetNexLine
 
 <p align="left">
@@ -32,5 +34,3 @@
 </p>
 
 [Here the code](https://github.com/zikocult/Cursus42/tree/main/02_ring/getnextline).
-
-
