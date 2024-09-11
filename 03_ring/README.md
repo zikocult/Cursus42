@@ -13,15 +13,23 @@
 
 ### **Exam01**
 
-![[Pasted image 20240911120601.png]]
-
+<p align="left">
+  <a href="https://github.com/zikocult/Cursus42/tree/main/exams"><img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/ExamRank02.png" /></a>
+</p>
 ### **So_Long**
 
-![[Pasted image 20240911120846.png]]
+<p align="left">
+  <a href="https://github.com/zikocult/Cursus42/tree/main/03_ring/so_long"><img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/So_long/So_long.png" /></a>
+</p>
 
 ### **Pipex**
 
-![[Pasted image 20240911121116.png]]
+<p align="left">
+  <a href="https://github.com/zikocult/Cursus42/tree/main/03_ring/pipex"><img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/Pipex/Pipex.png" /></a>
+</p>
 
 ### **Push Swap**
 
+<p align="left">
+  <a href="https://github.com/zikocult/Cursus42/tree/main/03_ring/push_swap"><img src="pendiente" /></a>
+</p>
