@@ -14,7 +14,9 @@ The other goals are similar to every other goal for this first year: being rigor
 
 The works with w, a, s, d or the arrow keys, you can finish the game pressing the ESC key, and the rules are very simple, you are a samurai collect all the bottles, avoid the enemies and scape to the door.
 
-![[Pasted image 20240911124224.png]]
+<p align="left">
+  <a href="https://github.com/zikocult/Cursus42/tree/main/03_ring/so_long"><img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/So_long/Pasted%20image%2020240911124224.png" /></a>
+</p>
 
 If you want to test it, you can clone this repository and simply execute make, this will compile all for you, and you only need to execute the program and for the arguments send the map of your choice:
 
