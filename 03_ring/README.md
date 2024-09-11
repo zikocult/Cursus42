@@ -30,7 +30,8 @@
 </p>
 
 ### **Push Swap**
-![[Push_swap.png]]
+
 <p align="left">
-  <a href="https://github.com/zikocult/Cursus42/tree/main/03_ring/push_swap"><img src="pendiente" /></a>
+  <a href="https://github.com/zikocult/Cursus42/tree/main/03_ring/push_swap"><img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/Push_swap/Push_swap.png" /></a>
 </p>
+
