@@ -48,7 +48,7 @@ Used technologies in this projects:
 	- **100% completed** ✅
 		- This project has allowed me to discover, through the use of my program written in C, the functioning of a UNIX mechanism, the PIPES and the forked processes.
 - [Push_Swap](https://github.com/zikocult/Cursus42/tree/main/03_ring/push_swap)
-	- **115% completed ✅**
+	- **118% completed ✅**
 		- This project has made me sort data in a stack, with a limited set of instructions, and using the fewest number of instructions. To succeed, I had to experiment with some of the various algorithms and choose, among them, the most appropriate one for optimal sorting.
 
 ********
