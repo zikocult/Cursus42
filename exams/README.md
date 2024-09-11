@@ -6,7 +6,7 @@ Only achieving 100% on this exams is considered passing.
 
 ### [**Exam01**](https://github.com/zikocult/Cursus42/tree/main/exams/exam01)
 
--  **Work in progress** 🚨
+-  **100% completed** ✅
 - A complete collection of exercises to remember what you have learned in the piscine and libft.
 - Consisting of four questions with incremental difficulty and you have a limit of three hours to complete.
 - Here a table with my results in my enterily week practice, not evaluated in the real exam yet.
