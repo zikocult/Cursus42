@@ -16,6 +16,7 @@
 <p align="left">
   <a href="https://github.com/zikocult/Cursus42/tree/main/exams"><img src="https://github.com/zikocult/Cursus42/blob/main/utils/Used_photos/ExamRank02.png" /></a>
 </p>
+
 ### **So_Long**
 
 <p align="left">
