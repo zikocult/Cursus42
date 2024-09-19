@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:12:27 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/09/04 17:01:11 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/09/19 19:59:44 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	pusht_to_b(t_push *data, bool check)
 	curr = data->a_head;
 	pb(data, check);
 	if (curr->value > data->median)
-		rr(data, check);
+		rb(data, check);
 }
 
 static void	sort_temp_value(int *list, int len)
