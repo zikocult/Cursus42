@@ -17,7 +17,7 @@ int main (void)
 		printf("Caraculo!\n");
 		return (0);
 	}
-	while (i <= 12)
+	while (line)
 	{
 		line = get_next_line(fd1);
 		printf("[fd1]: %s\n", line);
