@@ -6,18 +6,13 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:29:58 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/11/07 19:33:19 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/11/08 01:32:44 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 #include <signal.h>
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write (fd, &c, 1);
-}
 
 void	sigusr_handle(int sig, siginfo_t *info, void *context)
 {
@@ -38,9 +33,9 @@ void	sigusr_handle(int sig, siginfo_t *info, void *context)
 			pid = 0;
 			return ;
 		}
-		// cree el putchar, pues con el printf no funcionaba 
-		// hasta que he encontrado el fflush que limpia stdout
-		ft_putchar_fd(chr, 1);
+		write(1, &chr, 1);
+		// Si se usa el printf, tambien se debe usar fflush
+		// En caso contrario no imprimira nada, dejo ejemplo:
 		// printf("%c", chr);
 		// fflush(stdout);
 		chr = 0;
