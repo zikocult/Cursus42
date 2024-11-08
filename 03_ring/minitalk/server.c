@@ -6,13 +6,18 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:29:58 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/11/08 01:32:44 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/11/08 08:32:49 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 #include <signal.h>
+
+// Si se usa el printf, tambien se debe usar fflush
+// En caso contrario no imprimira nada, dejo ejemplo:
+// printf("%c", chr);
+// fflush(stdout);
 
 void	sigusr_handle(int sig, siginfo_t *info, void *context)
 {
@@ -34,10 +39,6 @@ void	sigusr_handle(int sig, siginfo_t *info, void *context)
 			return ;
 		}
 		write(1, &chr, 1);
-		// Si se usa el printf, tambien se debe usar fflush
-		// En caso contrario no imprimira nada, dejo ejemplo:
-		// printf("%c", chr);
-		// fflush(stdout);
 		chr = 0;
 		kill(pid, SIGUSR1);
 	}
