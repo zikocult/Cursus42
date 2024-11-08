@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:45:21 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/11/08 09:25:11 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/11/08 10:02:12 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 #include <signal.h>
 #include <string.h>
 
-static int	resp = 0;
-
 void	sigusr_handle(int sig)
 {
+	static int	resp = 0;
 
 	if (sig == SIGUSR1)
 		resp++;
@@ -27,20 +26,22 @@ void	sigusr_handle(int sig)
 		printf(" %d\n", resp - 1);
 }
 
-void	send_message(int pid, char *str, int len)
+void	send_message(int pid, char *str)
 {
-	int		i;
+	int		j;
 	char	chr;
 
-	while (*str)
+	j = 0;
+	while (str[j])
 	{
-		chr = *str++;
-		for (i = 8; i--;)
+		chr = str[j];
+		for (int i = 8; i--;)
 		{
 			if (chr >> i & 1)
 			{
 				if (kill(pid, SIGUSR2) == -1)
 				{
+					perror("PID");
 					fprintf(stderr, "Invalid PID: %d\n", pid);
 					exit(EXIT_FAILURE);
 				}
@@ -48,15 +49,16 @@ void	send_message(int pid, char *str, int len)
 			else
 				if (kill(pid, SIGUSR1) == -1)
 				{
+					perror("PID");
 					fprintf(stderr, "Invalid PID: %d\n", pid);
 					exit(EXIT_FAILURE);
 				}
 			usleep(100);
 		}
+		j++;
 	}
-	printf("Sent     : %d\nReceived :", len); 
 	chr = '\n';
-	for (i = 8; i--;)
+	for (int i = 8; i--;)
 	{
 		if (chr >> i & 1)
 			kill(pid, SIGUSR2);
@@ -64,14 +66,15 @@ void	send_message(int pid, char *str, int len)
 			kill(pid, SIGUSR1);
 		usleep(100);
 	}
-	for (i = 8; i--;)
+	printf("Sent     : %ld\nReceived :", strlen(str));
+	for (int i = 8; i--;)
 	{
 		kill(pid, SIGUSR1);
 		usleep(100);
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc != 3 || !strlen(argv[2]))
 	{
@@ -85,8 +88,6 @@ int main(int argc, char **argv)
 	}
 	signal(SIGUSR1, &sigusr_handle);
 	signal(SIGUSR2, &sigusr_handle);
-	send_message(atoi(argv[1]), argv[2], strlen(argv[2]));
-	if (resp == 0)
-		printf(" 0\n");
+	send_message(atoi(argv[1]), argv[2]);
 	exit(EXIT_SUCCESS);
 }
