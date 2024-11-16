@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:45:21 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/11/08 10:02:12 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2024/11/12 12:55:59 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	send_message(int pid, char *str)
 					fprintf(stderr, "Invalid PID: %d\n", pid);
 					exit(EXIT_FAILURE);
 				}
-			usleep(100);
+			usleep(200);
 		}
 		j++;
 	}
@@ -64,13 +64,13 @@ void	send_message(int pid, char *str)
 			kill(pid, SIGUSR2);
 		else
 			kill(pid, SIGUSR1);
-		usleep(100);
+		usleep(200);
 	}
 	printf("Sent     : %ld\nReceived :", strlen(str));
 	for (int i = 8; i--;)
 	{
 		kill(pid, SIGUSR1);
-		usleep(100);
+		usleep(200);
 	}
 }
 
