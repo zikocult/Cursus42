@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strings.c                                       :+:      :+:    :+:   */
+/*   lib_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/27 12:38:33 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2024/07/30 12:35:31 by Guillem Barulls  ###   ########.fr       */
+/*   Created: 2025/05/30 16:53:53 by Guillem Barulls   #+#    #+#             */
+/*   Updated: 2025/05/30 19:29:28 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
-#include <unistd.h>
+# include "../../include/philo.h"
 
-void	ft_putchar_pf(char c, int *count)
-{
-	int	i;
-
-	i = write(1, &c, 1);
-	if (i == -1)
-		*count = -1;
-	else
-		*count = *count + 1;
-}
-
-void	ft_putstr_pf(char *str, int *count)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
-	if (!str)
-		ft_putstr_pf("(null)", count);
-	else
+	while (s[i] != '\0')
 	{
-		while (str[i] && *count != -1)
-		{
-			ft_putchar_pf(str[i], count);
-			i++;
-		}
+		write(fd, &s[i], 1);
+		i++;
 	}
+}
+
+bool	ft_isdigit(char c)
+{
+	if (c >= '0' && c <= '9')
+		return (true);
+	return (false);
+}
+
+void	*protect_malloc(size_t bytes)
+{
+	void	*ret;
+	ret = malloc(bytes);
+	if (!ret)
+		exit_error("🚨 Malloc error\n");
+	return (ret);
 }

@@ -13,8 +13,6 @@
 NAME		= philo
 LIBS		= include/philo.h
 LIBINC		= include/
-LIBFT		= mylibft/libft.a
-LIBFTINC	= mylibft/include
 
 SRC_DIR		= src/
 OBJ_DIR		= obj/
@@ -37,10 +35,10 @@ MKDIR		= mkdir -p
 
 .PHONY:		all clean fclean re info normi libft
 
-all:		libft $(NAME)
+all:		$(NAME)
 
-$(NAME):	$(LIBFT) $(OBJSDIRS) $(OBJS)
-			$(CC) $(CFLAGS) $(DFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+$(NAME):	$(OBJSDIRS) $(OBJS)
+			$(CC) $(CFLAGS) $(DFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 			$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
@@ -48,19 +46,12 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(LIBS) Makefile
 $(OBJSDIRS) : 
 			$(MKDIR) $@
 
-libft:
-			make -C ./mylibft/
-			
-$(LIBFT):	libft
-
 clean:
 			$(RM) $(OBJS)
-			make clean -C ./mylibft/
 
 fclean:		clean
 			$(RM) $(OBJSDIRS)
 			$(RM) $(NAME)
-			make fclean -C ./mylibft/
 
 re:			fclean all
 
