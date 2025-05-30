@@ -6,11 +6,11 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 16:53:53 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2025/05/30 19:29:28 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2025/05/30 20:44:18 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../include/philo.h"
+#include "../../include/philo.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -34,6 +34,7 @@ bool	ft_isdigit(char c)
 void	*protect_malloc(size_t bytes)
 {
 	void	*ret;
+
 	ret = malloc(bytes);
 	if (!ret)
 		exit_error("🚨 Malloc error\n");

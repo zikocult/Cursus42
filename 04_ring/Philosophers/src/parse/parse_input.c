@@ -6,11 +6,11 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:40:58 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2025/05/30 18:46:29 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2025/05/30 20:49:40 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../include/philo.h"
+#include "../../include/philo.h"
 
 static char	*init_value(char *str)
 {
@@ -42,7 +42,7 @@ static long	ft_atol(char *str)
 	str = init_value(str);
 	while (ft_isdigit(*str))
 	{
-		num = (num * 10) + (*str - 48); 
+		num = (num * 10) + (*str - 48);
 		str++;
 	}
 	if (num > INT_MAX)

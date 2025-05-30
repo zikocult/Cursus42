@@ -6,11 +6,11 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:48:51 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2025/05/30 20:36:28 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2025/05/30 20:50:17 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../include/philo.h"
+#include "../../include/philo.h"
 
 static void	assign_forks(t_philo *philo, t_fork *fork, int i)
 {
@@ -22,7 +22,7 @@ static void	assign_forks(t_philo *philo, t_fork *fork, int i)
 		philo->first_fork = &fork[i];
 		philo->second_fork = &fork[(i + 1) % nbr];
 	}
-	else	
+	else
 	{
 		philo->first_fork = &fork[(i + 1) % nbr];
 		philo->second_fork = &fork[i];

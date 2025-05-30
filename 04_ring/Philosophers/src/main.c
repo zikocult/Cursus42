@@ -6,7 +6,7 @@
 /*   By: gbaruls- <gbaruls->                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:00:22 by gbaruls-          #+#    #+#             */
-/*   Updated: 2025/05/30 20:27:45 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2025/05/30 20:44:31 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int	main(int argc, char **argv)
 	}
 	else
 		exit_error("🚨 INPUT ERROR!!!!! 🚨\n"
-				GREEN"A correct example is: ./philo 5 800 200 200 [5]\n");
+			GREEN"A correct example is: ./philo 5 800 200 200 [5]\n");
 	return (EXIT_SUCCESS);
 }

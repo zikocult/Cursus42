@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   safe_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:08:25 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2025/05/30 19:50:40 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2025/05/30 20:48:56 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../include/philo.h"
+#include "../../include/philo.h"
 
 static void	handle_mutex_error(int status, t_codes mutexcode)
 {
@@ -21,8 +21,8 @@ static void	handle_mutex_error(int status, t_codes mutexcode)
 	else if (status == EINVAL && mutexcode == INIT)
 		exit_error("The value specified by attr is invalid\n");
 	else if (status == EDEADLK)
-		exit_error("A deadlock would occur if the thread" 
-			 "blocked is waiting for mutex");
+		exit_error("A deadlock would occur if the thread"
+			"blocked is waiting for mutex");
 	else if (status == EPERM)
 		exit_error("The current thread does not hold a lock on mutex");
 	else if (status == ENOMEM)
@@ -43,10 +43,10 @@ static void	handle_thread_error(int status, t_codes threadcode)
 		exit_error("The value specified is not joinable\n");
 	else if (status == ESRCH)
 		exit_error("No thread could be found corresponing that"
-			 "specified by the given thread ID, thread.\n");
+			"specified by the given thread ID, thread.\n");
 	else if (status == EDEADLK)
 		exit_error("A deadlock was detected or the value of"
-			 "thread specifies the calling thread.\n");
+			"thread specifies the calling thread.\n");
 }
 
 void	mutex_handle(pthread_mutex_t *mutex, t_codes mutexcode)
@@ -63,11 +63,12 @@ void	mutex_handle(pthread_mutex_t *mutex, t_codes mutexcode)
 		exit_error("Wrong code for mutex handle\n");
 }
 
-void	thread_handle(pthread_t *thread, void *(*foo)(void *), void *data, 
-				   t_codes threadcode)
+void	thread_handle(pthread_t *thread, void *(*foo)(void *), void *data,
+				t_codes threadcode)
 {
 	if (threadcode == CREATE)
-		handle_thread_error(pthread_create(thread, NULL, foo, data), threadcode);
+		handle_thread_error(pthread_create(thread,
+				NULL, foo, data), threadcode);
 	else if (threadcode == JOIN)
 		handle_thread_error(pthread_join(*thread, NULL), threadcode);
 	else if (threadcode == DETACH)
