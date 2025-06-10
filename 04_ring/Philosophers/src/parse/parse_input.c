@@ -6,7 +6,7 @@
 /*   By: Guillem Barulls <Guillem Barulls>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 17:40:58 by Guillem Barulls   #+#    #+#             */
-/*   Updated: 2025/05/30 20:49:40 by Guillem Barulls  ###   ########.fr       */
+/*   Updated: 2025/06/02 17:07:27 by Guillem Barulls  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*init_value(char *str)
 	return (number);
 }
 
-static long	ft_atol(char *str)
+static int	ft_atol(char *str)
 {
 	long	num;
 
@@ -45,7 +45,7 @@ static long	ft_atol(char *str)
 		num = (num * 10) + (*str - 48);
 		str++;
 	}
-	if (num > INT_MAX)
+	if (num > 2147483647)
 		exit_error("🚨 The value exceed the INT_MAX value 🚨\n");
 	if (num == 0)
 		exit_error("🚨 No philosophers to eat, sleep, think or die 🚨\n");
