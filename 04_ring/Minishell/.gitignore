@@ -1,0 +1,8 @@
+a.out
+minishell
+*.o
+*.a
+.obsidian/
+.vscode/
+*.swp
+*.gch
